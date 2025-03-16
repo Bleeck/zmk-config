@@ -1,0 +1,14 @@
+#include "bleeckeys.dtsi" // The shared dtsi file is included in the overlay
+
+&default_transform {
+    col-offset = <3>;
+};
+
+// Label of the kscan node in the dtsi
+&kscan0 {
+    col-gpios
+        = <&pro_micro 10 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 11 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 13 GPIO_ACTIVE_HIGH>
+        ;
+};
