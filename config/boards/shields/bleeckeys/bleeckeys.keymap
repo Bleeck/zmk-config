@@ -48,7 +48,7 @@
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
                                             &kp LGUI	&kp LALT	&mo 4	    &mo 2	    &kp CAPSLOCK		&kp N4	    &mo 5	    &kp    B 	&kp RGUI	&kp RALT 		
-                >
+                >;
             };
 
             capsmod_layer {
@@ -59,7 +59,7 @@
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
                                             &kp LGUI	&kp LALT	&mo 4	    &mo 2	    &kp CAPSLOCK		&kp N4	    &mo 5	    &kp    B 	&kp RGUI	&kp RALT 		
-                >
+                >;
             };
 
             mouse_layer {
@@ -70,7 +70,7 @@
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
                                             &kp LGUI	&kp LALT	&mo 4	    &mo 2	    &kp CAPSLOCK		&kp N4	    &mo 5	    &kp    B 	&kp RGUI	&kp RALT 		
-                >
+                >;
             };
 
             mouse_buttons_layer {
@@ -81,7 +81,7 @@
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
                                             &kp LGUI	&kp LALT	&mo 4	    &mo 2	    &kp CAPSLOCK		&kp N4	    &mo 5	    &kp    B 	&kp RGUI	&kp RALT 		
-                >
+                >;
             };
 
             num_layer {
@@ -92,7 +92,7 @@
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
                                             &kp LGUI	&kp LALT	&mo 4	    &mo 2	    &kp CAPSLOCK		&kp N4	    &mo 5	    &kp    B 	&kp RGUI	&kp RALT 		
-                >
+                >;
             };
 
             sign_layer {
@@ -103,7 +103,7 @@
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
                                             &kp LGUI	&kp LALT	&mo 4	    &mo 2	    &kp CAPSLOCK		&kp N4	    &mo 5	    &kp    B 	&kp RGUI	&kp RALT 		
-                >
+                >;
             };
     };
 };
