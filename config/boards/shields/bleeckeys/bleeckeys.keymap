@@ -11,7 +11,7 @@
 //            0       1      2      3       4       5        6          10      11      12       13       14       15     16        
 //  0      |  F1   |  F2  |  F3  |  F4   |  F5   |  F6   |                    |  F7   |  F8    |  F9    |  F10  |  F11  |  F12  |
 //  1      |  `    |   1  |   2  |   3   |   4   |   5   |                    |   6   |   7    |   8    |   9   |   0   | BSPC  |
-//  2      |  TAB  |   Q  |   W  |   E   |   R   |   T   |                    |   Y   |   U    |   I    |   O   |   P   |  DLT  |
+//  2      |  TAB  |   Q  |   W  |   E   |   R   |   T   |                    |   Y   |   U    |   I    |   O   |   P   |  DEL  |
 //  3      | SHIFT |   A  |   S  |   D   |   F   |   G   |                    |   H   |   J    |   K    |   L   |   ;   | ENTER |
 //  4      | CTRL  |   Z  |   X  |   C   |   V   |   B   |    A  |    |   A   |   N   |   M    |   ,    |   .   |   /   | SHIFT |
 //  5                     | LGUI | LALT  | SPACE |   1   |                    |   1   | SPACE  | RGUI   | RALT  |
@@ -21,7 +21,7 @@
 //        ------------------------------------------------------------------------------------------------------------
 //  0     |  F1   |  F2  |  F3  |  F4   |  F5   |  F6   | SPACE |    | SPACE |  F7   |  F8    |  F9    |  F10  |  F11  |  F12  |
 //  1     |  `    |   1  |   2  |   3   |   4   |   5   |   1   |    |   1   |   6   |   7    |   8    |   9   |   0   | BSPC  |
-//  2     |  TAB  |   Q  |   W  |   E   |   R   |   T   |  ESC  |    |  ESC  |   Y   |   U    |   I    |   O   |   P   |  DLT  |
+//  2     |  TAB  |   Q  |   W  |   E   |   R   |   T   |  ESC  |    |  ESC  |   Y   |   U    |   I    |   O   |   P   |  DEL  |
 //  3     | SHIFT |   A  |   S  |   D   |   F   |   G   |   2   |    |   2   |   H   |   J    |   K    |   L   |   ;   | ENTER |
 //  4     | CTRL  |   Z  |   X  |   C   |   V   |   B   |   3   |    |   3   |   N   |   M    |   ,    |   .   |   /   | SHIFT |
 //  5                    | LGUI | LALT  |   B   |   A   |   4   |    |   4   |   A   |   B    | LALT   |  LGUI |
@@ -43,7 +43,7 @@
             default_layer {
                 bindings = <
                     &kp ESC	    &kp LS(1)	&kp LS(2)	&kp LS(3)	&kp LS(4)	&kp LS(5)	&kp RET		        &kp RET	    &kp LS(6)	&kp LS(7)	&kp LS(8)	&kp LS(9)	&kp LS(0)	&kp BSPC 
-                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DLT
+                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DEL
                     &kp  TAB 	&kp  Q 	    &kp   W 	&kp   E 	&kp   R  	&kp   T	    &kp ESC  	        &kp  ESC 	&kp   Y 	&kp   U  	&kp   I 	&kp   O  	&kp   P 	&kp RET
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
@@ -54,7 +54,7 @@
             capsmod_layer {
                 bindings= <
                     &kp ESC	    &kp LS(1)	&kp LS(2)	&kp LS(3)	&kp LS(4)	&kp LS(5)	&kp RET		        &kp RET	    &kp LS(6)	&kp LS(7)	&kp LS(8)	&kp LS(9)	&kp LS(0)	&kp BSPC 
-                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DLT
+                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DEL
                     &kp  TAB 	&kp  Q 	    &kp   W 	&kp   E 	&kp   R  	&kp   T	    &kp ESC  	        &kp  ESC 	&kp   Y 	&kp   U  	&kp   I 	&kp   O  	&kp   P 	&kp RET
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
@@ -65,7 +65,7 @@
             mouse_layer {
                 bindings = <
                     &kp ESC	    &kp LS(1)	&kp LS(2)	&kp LS(3)	&kp LS(4)	&kp LS(5)	&kp RET		        &kp RET	    &kp LS(6)	&kp LS(7)	&kp LS(8)	&kp LS(9)	&kp LS(0)	&kp BSPC 
-                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DLT
+                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DEL
                     &kp  TAB 	&kp  Q 	    &kp   W 	&kp   E 	&kp   R  	&kp   T	    &kp ESC  	        &kp  ESC 	&kp   Y 	&kp   U  	&kp   I 	&kp   O  	&kp   P 	&kp RET
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
@@ -76,7 +76,7 @@
             mouse_buttons_layer {
                 bindings = <
                     &kp ESC	    &kp LS(1)	&kp LS(2)	&kp LS(3)	&kp LS(4)	&kp LS(5)	&kp RET		        &kp RET	    &kp LS(6)	&kp LS(7)	&kp LS(8)	&kp LS(9)	&kp LS(0)	&kp BSPC 
-                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DLT
+                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DEL
                     &kp  TAB 	&kp  Q 	    &kp   W 	&kp   E 	&kp   R  	&kp   T	    &kp ESC  	        &kp  ESC 	&kp   Y 	&kp   U  	&kp   I 	&kp   O  	&kp   P 	&kp RET
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
@@ -87,7 +87,7 @@
             num_layer {
                 bindings = <
                     &kp ESC	    &kp LS(1)	&kp LS(2)	&kp LS(3)	&kp LS(4)	&kp LS(5)	&kp RET		        &kp RET	    &kp LS(6)	&kp LS(7)	&kp LS(8)	&kp LS(9)	&kp LS(0)	&kp BSPC 
-                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DLT
+                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DEL
                     &kp  TAB 	&kp  Q 	    &kp   W 	&kp   E 	&kp   R  	&kp   T	    &kp ESC  	        &kp  ESC 	&kp   Y 	&kp   U  	&kp   I 	&kp   O  	&kp   P 	&kp RET
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
@@ -98,7 +98,7 @@
             sign_layer {
                 bindings = <
                     &kp ESC	    &kp LS(1)	&kp LS(2)	&kp LS(3)	&kp LS(4)	&kp LS(5)	&kp RET		        &kp RET	    &kp LS(6)	&kp LS(7)	&kp LS(8)	&kp LS(9)	&kp LS(0)	&kp BSPC 
-                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DLT
+                    &kp GRAVE	&kp N1	    &kp N2	    &kp N3	    &kp N4	    &kp N5	    &mo 1		        &kp SPACE	&kp N6	    &kp N7	    &kp N8	    &kp N9	    &kp N0	    &kp DEL
                     &kp  TAB 	&kp  Q 	    &kp   W 	&kp   E 	&kp   R  	&kp   T	    &kp ESC  	        &kp  ESC 	&kp   Y 	&kp   U  	&kp   I 	&kp   O  	&kp   P 	&kp RET
                     &kp LSHIFT	&kp  A 	    &kp   S 	&kp   D 	&kp   F  	&kp   G	    &mo 3		        &kp N2	    &kp   H 	&kp   J  	&kp   K 	&kp   L  	&kp SEMI	&kp LSHIFT
                     &kp LCTRL 	&kp  Z 	    &kp   X 	&kp   C 	&kp   V  	&kp   B	    &caps_word	        &kp N3	    &kp   N 	&kp   M  	&kp COMMA	&kp DOT	    &kp FSLH	&kp RCTRL
