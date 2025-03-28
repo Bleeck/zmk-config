@@ -16,6 +16,8 @@
                     &kp ESC	&kp 0	&kp 0	&kp LGUI	&caps_word				&caps_word	&kp RGUI	&kp 0	&kp 0	&kp ESC
 
                 >;
+                
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
     };
 };

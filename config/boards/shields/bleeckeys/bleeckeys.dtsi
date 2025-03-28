@@ -49,6 +49,15 @@
 };
 
 
+left_encoder: encoder_left {
+    compatible = "alps,ec11";
+    a-gpios = <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <30>;
+    status = "okay";
+};
+
+
 &pro_micro_i2c {
     status = "okay";
 
