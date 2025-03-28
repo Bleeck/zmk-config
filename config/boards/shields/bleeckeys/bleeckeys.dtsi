@@ -4,6 +4,7 @@
 
 / {
     chosen {
+        zephyr,display = &oled;
         zmk,physical-layout = &physical_layout0;
         // Other chosen items
     };
@@ -44,5 +45,26 @@
         //     38       39        40        41        42           43        44        45        46        47
             RC(4,0)   RC(4,1)   RC(4,2)   RC(4,3)   RC(4,4)      RC(4,5)   RC(4, 6)  RC(4, 7)  RC(4, 8)  RC(4, 9)
       >;
+    };
+};
+
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
     };
 };
