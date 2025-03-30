@@ -57,8 +57,8 @@
             symbol_layer {
                 bindings = <
 &kp EXCLAMATION	&kp AT_SIGN	&kp HASH	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS		&kp SLASH	&kp KP_NUMBER_7	&kp KP_NUMBER_8	&kp KP_NUMBER_9	&kp MINUS
-&kp DOLLAR	&kp PERCENT	&kp CARET	&kp LEFT_BRACKET	&kp RIGHT_BRACKET		&kp ASTERISK	&kp KP_NUMBER_4	&kp KP_NUMBER_5	&kp KP_NUMBER_6	&kp KP_PLUS
-&kp BACKSLASH	&kp SLASH	&kp AMPERSAND	&kp ASTERIX	&kp TILDE		&kp GRAVE	&kp KP_NUMBER_1	&kp KP_NUMBER_2	&kp KP_NUMBER_3	&kp EQUAL
+&kp LSHIFT	&kp PERCENT	&kp CARET	&kp LEFT_BRACKET	&kp RIGHT_BRACKET		&kp STAR	&kp KP_NUMBER_4	&kp KP_NUMBER_5	&kp KP_NUMBER_6	&kp KP_PLUS
+&kp BACKSLASH	&kp SLASH	&kp AMPERSAND	&kp DOLLAR	&kp TILDE		&kp GRAVE	&kp KP_NUMBER_1	&kp KP_NUMBER_2	&kp KP_NUMBER_3	&kp EQUAL
 &kp C_MUTE	&kp TAB	&kp BSPC	&kp RET	&mo 1		&kp SPACE	&kp KP_NUMBER_0	&kp KP_DOT	&kp KP_COMMA	&kp C_MUTE
 &kp ESC	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp ESC
 >;
