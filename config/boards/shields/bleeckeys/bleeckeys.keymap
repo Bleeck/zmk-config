@@ -25,8 +25,9 @@
 &mt LCTRL Q	&mt LCTRL W	&mt LGUI E	&mt LGUI R	&mt LCTRL T		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
 &kp LALT	&kp LSHIFT	&kp LCTRL	&mt LCTRL F	&mt LCTRL G		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans
 &mt LCTRL Z	&mt LCTRL X	&mt LCTRL C	&mt LCTRL V	&mt LCTRL B		&trans	&kp RET	&trans	&trans	&trans
-&kp C_MUTE	&mt LALT TAB	&kp DEL	&kp RET	&mo 1		&kp space	&kp RET	&kp DEL	&kp TAB	&kp C_MUTE
-&kp ESC	&tog 2	&mo 3	&kp WIN	&mt Caps Word		&mt Caps Word	&kp WIN	&mo 3	&tog 2	&kp ESC
+&kp C_MUTE	&mt LALT TAB	&kp DEL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp DEL	&kp TAB	&kp C_MUTE
+&kp ESC	&tog 2	&mo 3	&kp LGUI	&caps_word		&caps_word	&kp RGUI	&mo 3	&tog 2	&kp ESC
+
                 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -37,8 +38,9 @@
 &kp LCTRL	&kp Q	&kp UP_ARROW	&kp e	&kp r		&trans	&trans	&mmv MOVE_UP	&trans	&trans
 &kp RSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCROLL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
 &kp LALT	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCROLL_DOWN		&trans	&trans	&trans	&trans	&trans
-&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp space	&trans	&trans	&trans	&kp C_MUTE
-&kp ESC	&tog 2	&mo 3	&kp WIN	&mt Caps Word		&mt Caps Word	&kp WIN	&mo 3	&tog 2	&kp ESC
+&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&kp ESC	&tog 2	&mo 3	&kp WIN	&caps_word		&caps_word	&kp WIN	&mo 3	&tog 2	&kp ESC
+
                 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
