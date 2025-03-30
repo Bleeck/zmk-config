@@ -13,6 +13,11 @@
             key-positions = <44 45>;
             bindings = <&kp CAPSLOCK>;
         };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
     };
 
     keymap {
@@ -24,7 +29,7 @@
 &kp A	&kp S	&kp D	&kp F	&kp G		&kp H	&kp J	&kp K	&kp L	&kp SEMI
 &kp Z	&kp X	&kp C	&kp V	&kp B		&kp N	&kp M	&kp COMMA	&kp DOT	&kp SINGLE_QUOTE
 &kp C_MUTE	&kp TAB	&kp DEL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
-&mo 1	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp ESC
+&kp LCTRL	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp ESC
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -32,10 +37,10 @@
 
             capsMod_layer {
                 bindings = <
-&mt LCTRL Q	&mt LCTRL W	&mt LGUI E	&mt LGUI R	&mt LCTRL T		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
-&kp LALT	&kp LSHIFT	&kp LCTRL	&mt LCTRL F	&mt LCTRL G		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans
-&mt LCTRL Z	&mt LCTRL X	&mt LCTRL C	&mt LCTRL V	&mt LCTRL B		&trans	&kp RCTRL	&kp RSHIFT	&kp RALT	&trans
-&kp C_MUTE	&mt LALT TAB	&kp BSPC	&kp RET	&trans		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
+&kp LC(Q)	&kp LC(W)	&kp LG€	&kp LG®	&kp LC(T)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
+&kp LALT	&kp LSHIFT	&kp LCTRL	&kp LC(F)	&kp LC(G)		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans
+&kp LC(Z)	&kp LC(X)	&kp LC©	&kp LC(V)	&kp LC(B)		&trans	&kp RCTRL	&kp RSHIFT	&kp RALT	&trans
+&kp C_MUTE	&kp LA(TAB)	&kp BSPC	&kp RET	&trans		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
 &trans	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp RGUI
 >;
 
