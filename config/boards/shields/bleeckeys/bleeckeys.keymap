@@ -50,9 +50,9 @@
     
             navigation_layer {
                 bindings = <
-&kp LCTRL	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
+&kp LCTRL	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&zip_x_scaler 1 1	&mmv MOVE_UP	&trans	&trans
 &kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&zip_x_scaler 3 1	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&zip_x_scaler 1 3
-&kp LALT	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&trans	&trans	&zip_x_scaler 1 1	&trans	&trans
+&kp LALT	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&trans	&mkp MB1	&mkp MB3	&mkp MB2	&trans
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
 &mo 5	&mo 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&mo 2	&mo 5
 >;
