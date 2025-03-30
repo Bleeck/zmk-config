@@ -59,10 +59,21 @@
 &kp EXCLAMATION	&kp AT_SIGN	&kp HASH	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS		&kp SLASH	&kp KP_NUMBER_7	&kp KP_NUMBER_8	&kp KP_NUMBER_9	&kp MINUS
 &kp DOLLAR	&kp PERCENT	&kp CARET	&kp LEFT_BRACKET	&kp RIGHT_BRACKET		&kp ASTERISK	&kp KP_NUMBER_4	&kp KP_NUMBER_5	&kp KP_NUMBER_6	&kp KP_PLUS
 &kp BACKSLASH	&kp SLASH	&kp AMPERSAND	&kp ASTERIX	&kp TILDE		&kp GRAVE	&kp KP_NUMBER_1	&kp KP_NUMBER_2	&kp KP_NUMBER_3	&kp EQUAL
-&kp C_MUTE	&kp tab	&mt bk space	&kp RET	&mo 1		&kp space	&kp KP_NUMBER_0	&kp KP_DOT	&kp KP_COMMA	&kp C_MUTE
-&kp ESC	&mo 3	&mo 2	&mo 4	&mt Caps Word		&mt Caps Word	&mo 4	&mo 2	&mo 3	&kp ESC
-                >;
+&kp C_MUTE	&kp TAB	&kp BSPC	&kp RET	&mo 1		&kp SPACE	&kp KP_NUMBER_0	&kp KP_DOT	&kp KP_COMMA	&kp C_MUTE
+&kp ESC	&mo 3	&mo 2	&mo 4	&caps_word		&caps_word	&mo 4	&mo 2	&mo 3	&kp ESC
+>;
 
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
+
+            function_layer{
+                bindings = <
+                &kp C_PLAY	&kp F19	&kp F20	&kp F21	&kp F24		&trans	&kp F7	&kp F8	&kp F9	&kp RCTRL
+&kp C_PAUSE	&kp F16	&kp F17	&kp F18	&kp F23		&trans	&kp F4	&kp F5	&kp F6	&kp RSHIFT
+&trans	&kp F13	&kp F14	&kp F15	&kp F22		&trans	&kp F1	&kp F2	&kp F3	&kp LALT
+&kp C_MUTE	&kp TAB	&kp BSPC	&kp RET	&mo 1		&kp SPACE	&kp F10	&kp F11	&kp F12	&kp C_MUTE
+&kp ESC	&mo 3	&mo 2	&mo 4	&caps_word		&caps_word	&mo 4	&mo 2	&mo 3	&kp ESC
+                >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
 ??    };
