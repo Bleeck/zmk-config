@@ -37,7 +37,7 @@
 
             capsMod_layer {
                 bindings = <
-&kp LC(Q)	&kp LC(W)	&kp LG€	&kp LG®	&kp LC(T)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
+&kp LC(Q)	&kp LC(W)	&kp LG(E)	&kp LG(R)	&kp LC(T)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
 &kp LALT	&kp LSHIFT	&kp LCTRL	&kp LC(F)	&kp LC(G)		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans
 &kp LC(Z)	&kp LC(X)	&kp LC©	&kp LC(V)	&kp LC(B)		&trans	&kp RCTRL	&kp RSHIFT	&kp RALT	&trans
 &kp C_MUTE	&kp LA(TAB)	&kp BSPC	&kp RET	&trans		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
