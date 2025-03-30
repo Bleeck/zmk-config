@@ -85,7 +85,7 @@
             homerow_layer{
                 bindings = <
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&trans	&mt LALT A	&mt LSHIFT S	&mt LCTRL D	&trans		&trans	&mt RCTRL J	&mt RSHIFT K	&mt RALT L	&trans
+&trans	&mt LALT S	&mt LSHIFT D	&mt LCTRL F	&trans		&trans	&mt RCTRL J	&mt RSHIFT K	&mt RALT L	&trans
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &trans	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&mo 5
