@@ -34,9 +34,9 @@
                 bindings = <
 &mt LCTRL Q	&mt LCTRL W	&mt LGUI E	&mt LGUI R	&mt LCTRL T		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
 &kp LALT	&kp LSHIFT	&kp LCTRL	&mt LCTRL F	&mt LCTRL G		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans
-&mt LCTRL Z	&mt LCTRL X	&mt LCTRL C	&mt LCTRL V	&mt LCTRL B		&trans	&kp RET	&kp BSPC	&kp DEL	&trans
-&kp C_MUTE	&mt LALT TAB	&kp BSPC	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
-&kp LGUI	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp RGUI
+&mt LCTRL Z	&mt LCTRL X	&mt LCTRL C	&mt LCTRL V	&mt LCTRL B		&trans	&kp RCTRL	&kp RSHIFT	&kp RALT	&trans
+&kp C_MUTE	&mt LALT TAB	&kp BSPC	&kp RET	&trans		&kp SPACE	&kp RET	&kp RGUI	&kp TAB	&kp C_MUTE
+&trans	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp RGUI
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -60,7 +60,7 @@
 &kp LSHIFT	&kp PERCENT	&kp CARET	&kp LEFT_BRACKET	&kp RIGHT_BRACKET		&kp STAR	&kp KP_NUMBER_4	&kp KP_NUMBER_5	&kp KP_NUMBER_6	&kp KP_PLUS
 &kp BACKSLASH	&kp SLASH	&kp AMPERSAND	&kp DOLLAR	&kp TILDE		&kp GRAVE	&kp KP_NUMBER_1	&kp KP_NUMBER_2	&kp KP_NUMBER_3	&kp EQUAL
 &kp C_MUTE	&kp TAB	&kp BSPC	&kp RET	&mo 1		&kp SPACE	&kp KP_NUMBER_0	&kp KP_DOT	&kp KP_COMMA	&kp C_MUTE
-&kp ESC	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp ESC
+&kp ESC	&tog 2	&trans	&mo 4	&caps_word		&caps_word	&mo 4	&trans	&tog 2	&kp ESC
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -72,7 +72,7 @@
 &kp C_PAUSE	&kp F16	&kp F17	&kp F18	&kp F23		&trans	&kp F4	&kp F5	&kp F6	&kp RSHIFT
 &trans	&kp F13	&kp F14	&kp F15	&kp F22		&trans	&kp F1	&kp F2	&kp F3	&kp LALT
 &kp C_MUTE	&kp TAB	&kp BSPC	&kp RET	&mo 1		&kp SPACE	&kp F10	&kp F11	&kp F12	&kp C_MUTE
-&kp ESC	&tog 2	&mo 3	&mo 4	&caps_word		&caps_word	&mo 4	&mo 3	&tog 2	&kp ESC
+&kp ESC	&tog 2	&mo 3	&trans	&caps_word		&caps_word	&trans	&mo 3	&tog 2	&kp ESC
 >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
