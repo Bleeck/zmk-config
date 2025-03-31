@@ -12,7 +12,7 @@
         combo_capslock {
             timeout-ms = <50>;
             key-positions = <44 45>;
-            bindings = <&kp CAPSLOCK>;
+            bindings = <&caps_word>;
         };
         combo_esc {
             timeout-ms = <50>;
