@@ -11,7 +11,7 @@
         compatible = "zmk,combos";
         combo_capslock {
             timeout-ms = <50>;
-            key-positions = <43 44>;
+            key-positions = <43 48>;
             bindings = <&caps_word>;
         };
         combo_symbollayer_left {
@@ -68,9 +68,9 @@
 
             symbol_layer {
                 bindings = <
-&trans	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS
+&kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS
 &kp LSHIFT	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp ASTERISK	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL
-&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&trans		&kp GRAVE	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp BACKSLASH
+&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&trans		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp BACKSLASH
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp NUMBER_0	&kp DOT	&kp COMMA	&kp C_MUTE
 &kp LCTRL	&mo 2	&kp LSHIFT	&mo 4	&mo 3		&mo 3	&mo 4	&kp RSHIFT	&mo 2	&kp LCTRL
 >;
