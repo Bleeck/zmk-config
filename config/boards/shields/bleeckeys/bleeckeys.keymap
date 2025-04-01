@@ -10,7 +10,7 @@
 
 &mmv_input_listener {
     turbo {
-        layers = <NAV>;
+        layers = <6>;
         input-processors = <&zip_xy_scaler 3 1>;
     }; 
 };
