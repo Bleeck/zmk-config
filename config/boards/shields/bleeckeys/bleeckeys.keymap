@@ -131,7 +131,7 @@
 &bt BT_DISC 0	&bt BT_DISC 1	&bt BT_DISC 2	&bt BT_DISC 3	&bt BT_DISC 4		&trans	&trans	&trans	&trans	&trans
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
 &kp C_MUTE	&bt BT_CLR	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&kp C_MUTE
-&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&bootloader	&trans		&trans	&bootloader	&trans	&trans	&trans
 >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 };
@@ -139,11 +139,11 @@
                 display-name = "TURBO";
 
                 bindings = <
-&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&kp C_MUTE	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&kp C_MUTE
-&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
+&kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
+&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
+&kp LCTRL	&kp hp	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&trans	&mkp MB1	&mkp MB3	&mkp MB2	&trans
+&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&kp LCTRL	&mo 2	&kp LSHIFT	&mo 4	&mo 3		&mo 2	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
