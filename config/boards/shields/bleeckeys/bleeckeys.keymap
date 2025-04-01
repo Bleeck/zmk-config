@@ -11,7 +11,7 @@
 &mmv_input_listener {
     turbo {
         layers = <6>;
-        input-processors = <&zip_xy_scaler 3 1>;
+        input-processors = <&zip_xy_scaler 5 1>;
     }; 
 };
 
