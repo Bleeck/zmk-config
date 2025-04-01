@@ -11,8 +11,18 @@
         compatible = "zmk,combos";
         combo_capslock {
             timeout-ms = <50>;
-            key-positions = <44 45>;
+            key-positions = <43 44>;
             bindings = <&caps_word>;
+        };
+        combo_symbollayer_left {
+            timeout-ms = <50>;
+            key-positions = <34 41>;
+            bindings = <&mo 3>;
+        };
+        combo_symbollayer_right {
+            timeout-ms = <50>;
+            key-positions = <35 48>;
+            bindings = <&mo 3>;
         };
     };
 
