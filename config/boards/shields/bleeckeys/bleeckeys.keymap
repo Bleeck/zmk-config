@@ -28,7 +28,7 @@
             timeout-ms=<50>;
             key-positions = <40 42 44>;
             bindings = <&tog 5>;
-        }
+        };
     };
 
     keymap {
