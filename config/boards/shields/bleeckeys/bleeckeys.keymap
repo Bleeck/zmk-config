@@ -11,7 +11,14 @@
 &mmv_input_listener {
     turbo {
         layers = <6>;
-        input-processors = <&zip_xy_scaler 5 1>;
+        input-processors = <&zip_xy_scaler 4 1>;
+    }; 
+};
+
+&msc_input_listener {
+    turbo_scroll {
+        layers = <6>;
+        input-processors = <&zip_scroll_scaler  3 1>;
     }; 
 };
 
@@ -74,9 +81,9 @@
                 bindings = <
 &kp ESC	&kp LC(W)	&kp LG(E)	&kp LG(R)	&trans		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
 &kp LSHIFT	&kp LALT	&kp LCTRL	&trans	&trans		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp RSHIFT
-&kp TAB	&kp SPACE	&kp BSPC	&kp DEL	&trans		&trans	&kp BSPC	&kp DEL	&trans	&kp TAB
-&kp C_MUTE	&kp LGUI	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&kp LGUI	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&kp TAB	&kp SPACE	&kp BSPC	&kp DEL	&trans		&kp BSPC	&kp DEL	&trans	&trans	&kp TAB
+&kp C_MUTE	&kp LGUI	&trans	&kp LSHIFT	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&kp LCTRL	&mo 2	&kp LSHIFT	&mo 4	&mo 3		&mo 2	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
