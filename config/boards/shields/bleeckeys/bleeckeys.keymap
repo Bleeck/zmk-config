@@ -122,7 +122,7 @@
 
                 bindings = <
 &kp C_PLAY	&kp F19	&kp F20	&kp F21	&kp F24		&trans	&kp F7	&kp F8	&kp F9	&kp RCTRL
-&kp C_PAUSE	&kp F16	&kp F17	&kp F18	&kp F23		&trans	&kp F4	&kp F5	&kp F6	&kp RSHIFT
+&kp C_PAUSE	&kp F16	&kp F17	&kp F18	&kp F23		&kp LA(F4)	&kp F4	&kp F5	&kp F6	&kp RSHIFT
 &kp LCTRL	&kp F13	&kp F14	&kp F15	&kp F22		&trans	&kp F1	&kp F2	&kp F3	&kp LALT
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp F10	&kp F11	&kp F12	&kp C_MUTE
 &kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
