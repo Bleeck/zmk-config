@@ -51,22 +51,12 @@
         combo_symbollayer_right {
             timeout-ms = <50>;
             key-positions = <35 48>;
-            bindings = <&mo 3>;
+            bindings = <&mo 1>;
         };
         combo_bluetooth{
             timeout-ms=<50>;
             key-positions = <40 42 44>;
             bindings = <&tog 5>;
-        };
-        combo_capsmod_right{
-            timeout-ms=<50>;
-            key-positions = <35 48>;
-            bindings = <&mo 1>;  
-        };
-        combo_symbol_left{
-            timeout-ms=<50>;
-            key-positions = <34 41>;
-            bindings = <&mo 3>;
         };
     };
 
@@ -104,8 +94,8 @@
 
                 bindings = <
 &kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
-&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&kp BSPC	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
-&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&trans	&mkp MB1	&mkp MB3	&mkp MB2	&trans
+&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
+&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
 &kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
 >;
