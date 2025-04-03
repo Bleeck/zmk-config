@@ -79,7 +79,7 @@
             capsMod_layer {
                 display-name = "CAPSMOD";
                 bindings = <
-ESC	&kp LC(W)	&kp LG(E)	&kp LG(R)	&kp SPACE		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
+&kp ESC	&kp LC(W)	&kp LG(E)	&kp LG(R)	&kp SPACE		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
 &kp LSHIFT	&kp LALT	&kp LCTRL	&kp TAB	&kp BSPC		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp RSHIFT
 &trans	&kp SPACE	&kp BSPC	&kp DEL	&kp DEL		&kp BSPC	&kp DEL	&trans	&trans	&kp TAB
 &kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
