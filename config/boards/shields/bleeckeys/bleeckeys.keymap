@@ -39,22 +39,22 @@
     combos {
         compatible = "zmk,combos";
         combo_capslock {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <42 47>;
             bindings = <&caps_word>;
         };
         combo_symbollayer_left {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <34 41>;
             bindings = <&mo 3>;
         };
         combo_symbollayer_right {
-            timeout-ms = <50>;
+            timeout-ms = <200>;
             key-positions = <35 48>;
             bindings = <&mo 1>;
         };
         combo_bluetooth{
-            timeout-ms=<50>;
+            timeout-ms=<200>;
             key-positions = <40 42 44>;
             bindings = <&tog 5>;
         };
