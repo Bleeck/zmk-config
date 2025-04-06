@@ -69,8 +69,8 @@
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
 &kp A	&kp S	&kp D	&kp F	&kp G		&kp H	&kp J	&kp K	&kp L	&kp SINGLE_QUOTE
 &kp Z	&kp X	&kp C	&kp V	&kp B		&kp N	&kp M	&kp COMMA	&kp DOT	&kp SEMI
-&kp C_MUTE	&kp LGUI	&kp LALT	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp RALT	&kp LGUI	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
+&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -81,11 +81,22 @@
                 bindings = <
 &kp ESC	&kp LC(W)	&kp LG(E)	&kp LG(R)	&kp SPACE		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans
 &kp LSHIFT	&kp LALT	&kp LCTRL	&kp TAB	&kp BSPC		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp RSHIFT
-&trans	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp DEL		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&kp TAB
-&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&trans	&mkp MB1	&mkp MB3	&mkp MB2	&kp DEL		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&kp TAB
+&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
+            sensor-bindings =  <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
 
+            homerow_layer{
+                display-name = "HOMEROW";
+                bindings =<
+&trans	    &trans	    &trans	    &trans	    &trans		&trans	&trans	    &trans	    &trans	    &trans
+&kp LSHIFT	&kp LALT	&kp LCTRL	&kp LGUI	&trans		&trans	&kp LGUI	&kp LCTRL	&kp LALT	&kp LSHIFT
+&kp LSHIFT	&kp LALT	&kp LCTRL	&kp LGUI	&trans		&trans	&kp LGUI	&kp LCTRL	&kp LALT	&kp LSHIFT
+&kp C_MUTE	&trans	    &trans	    &trans	    &mo 1		&kp SPACE	&trans	&trans	    &trans	    &kp C_MUTE
+&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
+>;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
 
@@ -96,8 +107,8 @@
 &kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
 &kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
 &kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
-&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp SPACE		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&mo 2	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -111,8 +122,8 @@
 &kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS
 &kp LSHIFT	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp ASTERISK	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL
 &kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&trans		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp BACKSLASH
-&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp NUMBER_0	&kp DOT	&kp COMMA	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp NUMBER_0	&kp COMMA	&kp DOT	&kp C_MUTE
+&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
@@ -123,9 +134,9 @@
                 bindings = <
 &kp C_PLAY	&kp F19	&kp F20	&kp F21	&kp F24		&kp LC(LA(DEL))	&kp F7	&kp F8	&kp F9	&kp RCTRL
 &kp C_PAUSE	&kp F16	&kp F17	&kp F18	&kp F23		&kp LA(F4)	&kp F4	&kp F5	&kp F6	&kp RSHIFT
-&kp LCTRL	&kp F13	&kp F14	&kp F15	&kp F22		&kp LC(LA(GRAVE))	&kp F1	&kp F2	&kp F3	&kp LALT
-&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp F10	&kp F11	&kp F12	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&kp LCTRL	&kp F13	&kp F14	&kp F15	&kp F22		&kp LC(LS(ESC))	&kp F1	&kp F2	&kp F3	&kp LALT
+&kp C_MUTE	&trans	&trans	&kp LC(LA(GRAVE))	&mo 1		&kp SPACE	&kp F10	&kp F11	&kp F12	&kp C_MUTE
+&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             };
@@ -148,9 +159,24 @@
                 bindings = <
 &kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
 &kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
-&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&trans	&mkp MB1	&mkp MB3	&mkp MB2	&trans
-&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
-&kp LCTRL	&td0	&kp LSHIFT	&mo 4	&mo 3		&td0	&mo 4	&kp RSHIFT	&mo 3	&kp LCTRL
+&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
+&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp SPACE		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&mo 2	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
+>;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
+            };
+    };
+};
+
+            navigation_symbol_layer {
+                display-name = "NAV_SYM";
+
+                bindings = <
+&kp ESC	&kp 1	&kp 2	&kp 3	&kp 4		&trans	&trans	&trans	&trans	&trans
+&trans	&kp 5	&kp 6	&kp 7	&kp 8		&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&trans	&kp B		&trans	&trans	&trans	&trans	&trans
+&kp C_MUTE	&kp I	&kp M	&kp N	&kp SPACE		&trans	&trans	&trans	&trans	&kp C_MUTE
+&mo 2	&mkp MB2	&mo 8	&to 0	&to 3		&trans	&trans	&trans	&trans	&trans
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
