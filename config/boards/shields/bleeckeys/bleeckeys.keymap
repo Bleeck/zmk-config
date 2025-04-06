@@ -133,8 +133,8 @@
                 display-name = "NAV";
 
                 bindings = <
-&kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
-&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
+&kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
+&kp LSHIFT	&kp A	&kp S	&kp D	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
 &kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
 &kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp SPACE		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
