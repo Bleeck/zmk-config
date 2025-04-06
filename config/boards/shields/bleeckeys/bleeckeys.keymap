@@ -34,6 +34,15 @@
             tapping-term-ms = <300>;
             bindings = <&mo 2>, <&mo 6>;
         };
+        hmt: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, &trans;
+            display-name = "Mod-Tap";
+        };
+
     };
 
     combos {
@@ -92,8 +101,8 @@
                 display-name = "HOMEROW";
                 bindings =<
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&mt LSHIFT &trans	&mt LALT &trans	&mt LCTRL &trans	&mt LGUI &trans	&trans		&trans	#REF!	#REF!	#REF!	#REF!
-&mt LSHIFT &trans	&mt LALT &trans	&mt LCTRL &trans	&mt LGUI &trans	&trans		&trans	&mt LGUI &trans	&mt LCTRL &trans	&mt LALT &trans	&mt LSHIFT &trans
+&hmt LSHIFT	&mt LALT 	&hmt LCTRL	&hmt LGUI	&trans		&trans	&hmt LGUI	&hmt LCTRL	&mt LALT 	&hmt LSHIFT
+&hmt LSHIFT	&mt LALT 	&hmt LCTRL	&hmt LGUI	&trans		&trans	&hmt LGUI	&hmt LCTRL	&mt LALT 	&hmt LSHIFT
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
