@@ -200,9 +200,9 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
                 bindings = <
 &kp ESC	&kp 1	&kp 2	&kp 3	&kp 4		&trans	&trans	&trans	&trans	&trans
-&trans	&kp 5	&kp 6	&kp 7	&kp 8		&trans	&trans	&trans	&trans	&trans
-&trans	&trans	&trans	&trans	&kp B		&trans	&trans	&trans	&trans	&trans
-&kp C_MUTE	&kp I	&kp M	&kp N	&kp SPACE		&trans	&trans	&trans	&trans	&kp C_MUTE
+&kp C	&kp 5	&kp 6	&kp 7	&kp 8		&trans	&trans	&trans	&trans	&trans
+&trans	&kp I	&kp M	&kp N	&kp B		&trans	&trans	&trans	&trans	&trans
+&kp C_MUTE	&trans	&trans	&kp RET	&kp SPACE		&trans	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mkp MB2	&mo 8	&to 0	&to 3		&trans	&trans	&trans	&trans	&trans
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
