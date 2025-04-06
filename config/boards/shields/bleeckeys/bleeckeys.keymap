@@ -101,8 +101,8 @@
                 display-name = "HOMEROW";
                 bindings =<
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&hmt LSHIFT	&mt LALT 	&hmt LCTRL	&hmt LGUI	&trans		&trans	&hmt LGUI	&hmt LCTRL	&mt LALT 	&hmt LSHIFT
-&hmt LSHIFT	&mt LALT 	&hmt LCTRL	&hmt LGUI	&trans		&trans	&hmt LGUI	&hmt LCTRL	&mt LALT 	&hmt LSHIFT
+&hmt LSHIFT A	&mt LALT S	&hmt LCTRL D	&hmt LGUI F	&trans		&trans	&hmt LGUI J	&hmt LCTRL K	&mt LALT L	&hmt LSHIFT L
+&hmt LSHIFT Z	&mt LALT X 	&hmt LCTRL C	&hmt LGUI V	&trans		&trans	&hmt LGUI M	&hmt LCTRL M	&mt LALT M	&hmt LSHIFT M
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
