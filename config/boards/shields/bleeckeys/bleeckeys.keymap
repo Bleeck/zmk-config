@@ -34,15 +34,32 @@
             tapping-term-ms = <300>;
             bindings = <&mo 2>, <&mo 6>;
         };
-        hmt: mod_tap {
+        hmtl: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            label = "HOMEROW_MODS_LEFT_HAND";
             bindings = <&kp>, <&trans>;
-            display-name = "Mod-Tap";
-        };
 
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "balanced";
+            require-prior-idle-ms = <REQ_IDLE_MS>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 31 32 33 36 37 38 >;
+            hold-trigger-on-release;
+        };
+        hmtr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT_HAND";
+            bindings = <&kp>, <&trans>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQ_IDLE_MS>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 31 32 33 36 37 38 >;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
     };
 
     combos {
@@ -101,8 +118,8 @@
                 display-name = "HOMEROW";
                 bindings =<
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&hmt LSHIFT A	&mt LALT S	&hmt LCTRL D	&hmt LGUI F	&trans		&trans	&hmt LGUI J	&hmt LCTRL K	&mt LALT L	&hmt LSHIFT L
-&hmt LSHIFT Z	&mt LALT X 	&hmt LCTRL C	&hmt LGUI V	&trans		&trans	&hmt LGUI M	&hmt LCTRL M	&mt LALT M	&hmt LSHIFT M
+&hmtl LSHIFT A	&mtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&trans		&trans	&hmtr LGUI J	&hmtr LCTRL K	&mtr LALT L	&hmtr LSHIFT L
+&hmtl LSHIFT Z	&mtl LALT X &hmtl LCTRL C	&hmtl LGUI V	&trans		&trans	&hmtr LGUI M	&hmtr LCTRL M	&mtr LALT M	&hmtr LSHIFT M
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
