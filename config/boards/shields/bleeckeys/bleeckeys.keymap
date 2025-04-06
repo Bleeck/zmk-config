@@ -32,12 +32,6 @@
 
 / {
     behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&mo 2>, <&mo 6>;
-        };
         hmtl: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT_HAND";
@@ -86,7 +80,7 @@
         combo_bluetooth{
             timeout-ms=<200>;
             key-positions = <40 42 44>;
-            bindings = <&tog 5>;
+            bindings = <&tog 6>;
         };
     };
 
