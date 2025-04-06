@@ -14,14 +14,14 @@
 
 &mmv_input_listener {
     turbo {
-        layers = <6>;
+        layers = <7>;
         input-processors = <&zip_xy_scaler 4 1>;
     }; 
 };
 
 &msc_input_listener {
     turbo_scroll {
-        layers = <6>;
+        layers = <7>;
         input-processors = <&zip_scroll_scaler  3 1>;
     }; 
 };
