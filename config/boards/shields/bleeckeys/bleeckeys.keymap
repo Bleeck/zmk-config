@@ -165,8 +165,6 @@
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
-    };
-};
 
             navigation_symbol_layer {
                 display-name = "NAV_SYM";
