@@ -35,7 +35,7 @@
         hmtl: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT_HAND";
-            bindings = <&kp>, <&trans>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <TAPPING_TERM_MS>;
