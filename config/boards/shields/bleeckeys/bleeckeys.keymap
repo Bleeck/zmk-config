@@ -136,8 +136,8 @@
 &kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
 &kp LSHIFT	&kp A	&kp S	&kp D	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
 &kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
-&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp SPACE		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
-&mo 2	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
+&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -186,11 +186,11 @@
                 display-name = "TURBO";
 
                 bindings = <
-&kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
-&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
+&kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
+&kp LSHIFT	&kp A	&kp S	&kp D	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
 &kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
-&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp SPACE		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
-&mo 2	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
+&kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
+&kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
@@ -200,10 +200,10 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
                 bindings = <
 &kp ESC	&kp 1	&kp 2	&kp 3	&kp 4		&trans	&trans	&trans	&trans	&trans
-&kp C	&kp 5	&kp 6	&kp 7	&kp 8		&trans	&trans	&trans	&trans	&trans
-&trans	&kp I	&kp M	&kp N	&kp B		&trans	&trans	&trans	&trans	&trans
-&kp C_MUTE	&trans	&trans	&kp RET	&kp SPACE		&trans	&trans	&trans	&trans	&kp C_MUTE
-&mo 2	&mkp MB2	&mo 8	&to 0	&to 3		&trans	&trans	&trans	&trans	&trans
+&kp LSHIFT	&kp 5	&kp 6	&kp 7	&kp 8		&trans	&trans	&trans	&trans	&trans
+&kp C	&kp I	&kp M	&kp N	&kp B		&trans	&trans	&trans	&trans	&trans
+&kp C_MUTE	&trans	&trans	&kp RET	&mo 1		&trans	&trans	&trans	&trans	&kp C_MUTE
+&kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&trans	&trans	&trans	&trans	&trans
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
