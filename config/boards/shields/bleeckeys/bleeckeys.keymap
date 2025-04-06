@@ -77,6 +77,11 @@
             key-positions = <35 48>;
             bindings = <&mo 1>;
         };
+        combo_return_left {
+            timeout-ms = <200>;
+            key-positions = <41 42>;
+            bindings = <&kp RET>;
+        };
         combo_bluetooth{
             timeout-ms=<200>;
             key-positions = <40 42 44>;
