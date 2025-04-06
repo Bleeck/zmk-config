@@ -91,10 +91,10 @@
             homerow_layer{
                 display-name = "HOMEROW";
                 bindings =<
-&trans	    &trans	    &trans	    &trans	    &trans		&trans	&trans	    &trans	    &trans	    &trans
-&kp LSHIFT	&kp LALT	&kp LCTRL	&kp LGUI	&trans		&trans	&kp LGUI	&kp LCTRL	&kp LALT	&kp LSHIFT
-&kp LSHIFT	&kp LALT	&kp LCTRL	&kp LGUI	&trans		&trans	&kp LGUI	&kp LCTRL	&kp LALT	&kp LSHIFT
-&kp C_MUTE	&trans	    &trans	    &trans	    &mo 1		&kp SPACE	&trans	&trans	    &trans	    &kp C_MUTE
+&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
+&mt LSHIFT &trans	&mt LALT &trans	&mt LCTRL &trans	&mt LGUI &trans	&trans		&trans	#REF!	#REF!	#REF!	#REF!
+&mt LSHIFT &trans	&mt LALT &trans	&mt LCTRL &trans	&mt LGUI &trans	&trans		&trans	&mt LGUI &trans	&mt LCTRL &trans	&mt LALT &trans	&mt LSHIFT &trans
+&kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
