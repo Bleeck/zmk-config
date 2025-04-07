@@ -87,6 +87,11 @@
             key-positions = <40 42 44>;
             bindings = <&tog 6>;
         };
+        combo_homerow{
+            timeout-ms=<200>;
+            key-positions = <34 35>;
+            bindings = <&mo 2>;
+        };
     };
 
     keymap {
@@ -121,8 +126,8 @@
                 display-name = "HOMEROW";
                 bindings =<
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI G	&trans		&trans	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
-&hmtl LSHIFT Z	&hmtl LALT X	&hmtl LCTRL C	&hmtl LGUI H	&trans		&trans	&hmtr LGUI M	&hmtr LCTRL COMMA	&hmtr LALT  DOT	&hmtr LSHIFT SEMI
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&trans		&trans	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
+&hmtl LSHIFT Z	&hmtl LALT X	&hmtl LCTRL C	&hmtl LGUI V	&trans		&trans	&hmtr LGUI M	&hmtr LCTRL COMMA	&hmtr LALT  DOT	&hmtr LSHIFT SEMI
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
@@ -133,9 +138,9 @@
                 display-name = "NAV";
 
                 bindings = <
-&kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
-&kp LSHIFT	&kp A	&kp S	&kp D	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
-&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
+&kp LALT	&kp Q	&kp W	&kp E	&kp R		&msc SCRL_UP	&trans	&mmv MOVE_UP	&trans	&trans
+&kp LSHIFT	&kp A	&kp S	&kp D	&kp F		&msc SCRL_DOWN	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
+&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
 &kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
 >;
