@@ -150,7 +150,7 @@
                 bindings = <
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
 &hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&kp B		&kp N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
+&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
 &kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
 &caps_word	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
@@ -214,9 +214,9 @@
                 display-name = "FN";
 
                 bindings = <
-&kp C_PLAY	&kp F19	&kp F20	&kp F21	&kp F24		&kp LC(LA(DEL))	&kp F7	&kp F8	&kp F9	&kp RCTRL
-&kp C_PAUSE	&kp F16	&kp F17	&kp F18	&kp F23		&kp LA(F4)	&kp F4	&kp F5	&kp F6	&kp RSHIFT
-&kp LCTRL	&kp F13	&kp F14	&kp F15	&kp F22		&kp LC(LS(ESC))	&kp F1	&kp F2	&kp F3	&kp LALT
+&kp LALT	&kp F19	&kp F20	&kp F21	&kp F24		&kp LC(LA(DEL))	&kp F7	&kp F8	&kp F9	&kp LALT
+&kp LSHIFT	&hmtl LALT F16	&hmtl LCTRL F17	&kp F18	&kp F23		&kp LA(F4)	&kp F4	&kp F5	&kp F6	&kp LSHIFT
+&kp LCTRL	&kp F13	&kp F14	&kp F15	&kp F22		&kp LC(LS(ESC))	&kp F1	&kp F2	&kp F3	&kp LCTRL
 &kp C_MUTE	&trans	&trans	&kp LC(LA(GRAVE))	&mo 1		&kp SPACE	&kp F10	&kp F11	&kp F12	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
