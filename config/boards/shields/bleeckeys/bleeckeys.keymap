@@ -149,8 +149,8 @@
                 display-name = "BASE";
                 bindings = <
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
-&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT L	&hmtr LSHIFT SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&kp B		&kp N	&hmtLayerL 4 M	&kp COMMA	&kp DOT	&kp SEMI
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
+&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&kp B		&kp N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
 &kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
 &caps_word	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
@@ -202,7 +202,7 @@
 
                 bindings = <
 &kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS
-&kp LSHIFT	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp ASTERISK	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL
+&kp LSHIFT	&hmtl LALT LEFT_PARENTHESIS	&hmtl LCTRL RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp ASTERISK	&kp NUMBER_4	&hmtl LCTRL NUMBER_5	&hmtl LALT NUMBER_6	&hmtr LSHIFT EQUAL
 &kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&trans		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp BACKSLASH
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&kp NUMBER_0	&kp COMMA	&kp DOT	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
