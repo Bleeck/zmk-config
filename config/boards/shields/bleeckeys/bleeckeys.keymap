@@ -77,7 +77,7 @@
         };
         hmtLayerL: homerow_layer_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT_HAND";
+            label = "HOMEROW_MODS_LAYER_LEFT_HAND";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -90,7 +90,7 @@
         };
         hmtLayerR: homerow_layer_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT_HAND";
+            label = "HOMEROW_MODS_LAYER_RIGHT_HAND";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
