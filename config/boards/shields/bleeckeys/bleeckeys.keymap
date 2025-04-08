@@ -10,7 +10,7 @@
 #define TAPPING_TERM_MS 150
 #define SLOW_TAPPING_TERM_MS 350
 #define IDLE_TIMEOUT_MS 5000
-#define REQ_IDLE_MS 500
+#define REQ_IDLE_MS 350
 
 &mmv_input_listener {
     turbo {
@@ -27,6 +27,27 @@
 };
 
 / {
+
+    macros {
+        lm: lm {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_press &mo MACRO_PLACEHOLDER>
+                , <&macro_param_2to1>
+                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_param_2to1>
+                , <&macro_release &kp MACRO_PLACEHOLDER>
+                , <&macro_param_1to1>
+                , <&macro_release &mo MACRO_PLACEHOLDER>
+                ;
+        };
+    };
+
     behaviors {
         hmtl: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -54,6 +75,32 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32 33>;
             hold-trigger-on-release;
         };
+        hmtLayerL: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT_HAND";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "balanced";
+            require-prior-idle-ms = <REQ_IDLE_MS>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+        };
+        hmtLayerR: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT_HAND";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "balanced";
+            require-prior-idle-ms = <REQ_IDLE_MS>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32 33>;
+            hold-trigger-on-release;
+        };
     };
 
     combos {
@@ -68,7 +115,7 @@
             key-positions = <34 41>;
             bindings = <&mo 3>;
         };
-        combo_symbollayer_right {
+        combo_capsmod_right {
             timeout-ms = <200>;
             key-positions = <35 48>;
             bindings = <&mo 1>;
@@ -88,6 +135,11 @@
             key-positions = <34 35>;
             bindings = <&mo 2>;
         };
+        combo_symbol_shift_right{
+            timeout-ms=<200>;
+            key-positions = <47 48>;
+            bindings = <&lm 3 LSHIFT>
+        };
     };
 
     keymap {
@@ -97,10 +149,10 @@
                 display-name = "BASE";
                 bindings = <
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
-&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&kp V	&kp B		&kp N	&kp M	&kp COMMA	&kp DOT	&kp SEMI
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
+&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&kp B		&kp N	&hmtLayerL 4 M	&kp COMMA	&kp DOT	&kp SEMI
 &kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
-&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
+&caps_word	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
