@@ -252,8 +252,8 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                 display-name = "NAV_SYM";
 
                 bindings = <
-&kp ESC	&kp 1	&kp 2	&kp 3	&kp 4		&trans	&trans	&trans	&trans	&trans
-&kp LSHIFT	&kp 5	&kp 6	&kp 7	&kp 8		&trans	&trans	&trans	&trans	&trans
+&kp ESC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_4		&trans	&trans	&trans	&trans	&trans
+&kp LSHIFT	&kp NUMBER_5	&kp NUMBER_6	&kp NUMBER_7	&kp NUMBER_8		&trans	&trans	&trans	&trans	&trans
 &kp C	&kp I	&kp M	&kp N	&kp B		&trans	&trans	&trans	&trans	&trans
 &kp C_MUTE	&trans	&trans	&kp RET	&mo 1		&trans	&trans	&trans	&trans	&kp C_MUTE
 &kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&trans	&trans	&trans	&trans	&trans
