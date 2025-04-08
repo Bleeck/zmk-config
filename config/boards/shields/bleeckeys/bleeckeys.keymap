@@ -75,7 +75,7 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32 33>;
             hold-trigger-on-release;
         };
-        hmtLayerL: homerow_mods_left {
+        hmtLayerL: homerow_layer_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT_HAND";
             bindings = <&kp>, <&kp>;
@@ -88,7 +88,7 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 36 37 38>;
             hold-trigger-on-release;
         };
-        hmtLayerR: homerow_mods_right {
+        hmtLayerR: homerow_layer_mods_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_RIGHT_HAND";
             bindings = <&kp>, <&kp>;
