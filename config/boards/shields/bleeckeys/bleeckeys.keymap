@@ -138,7 +138,7 @@
         combo_symbol_shift_right{
             timeout-ms=<200>;
             key-positions = <47 48>;
-            bindings = <&lm 3 LSHIFT>
+            bindings = <&lm 3 LSHIFT>;
         };
     };
 
