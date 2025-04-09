@@ -261,7 +261,7 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
 
-            navigation_symbol_layer {
+            navigation_alpha_layer {
                 display-name = "NAV_ALPHA";
 
                 bindings = <
