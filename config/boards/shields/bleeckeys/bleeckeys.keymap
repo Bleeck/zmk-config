@@ -110,6 +110,7 @@
             key-positions = <42 47>;
             bindings = <&caps_word>;
         };
+        
         combo_capsmod_right {
             timeout-ms = <200>;
             key-positions = <35 48>;
