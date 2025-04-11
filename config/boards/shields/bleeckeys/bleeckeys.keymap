@@ -149,10 +149,10 @@
                 display-name = "BASE";
                 bindings = <
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
-&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
+&kp A	&kp S	&kp D	&kp F	&kp G		&kp H	&kp J	&kp K	&kp L	&kp SINGLE_QUOTE
+&kp Z	&kp X	&kp C	&kp V	&kp B		&kp N	&kp M	&kp COMMA	&kp DOT	&kp SEMI
 &kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
-&caps_word	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
+&mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -171,11 +171,11 @@
             };
 
             homerow_layer{
-                display-name = "CLEAN";
+                display-name = "HOMEROW";
                 bindings =<
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
-&kp A	&kp S	&kp D	&kp F	&kp G		&kp H	&kp J	&kp K	&kp L	&kp SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&kp V	&kp B		&kp N	&kp M	&kp COMMA	&kp DOT	&kp SEMI
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
+&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
 &kp C_MUTE	&trans	&trans	&trans	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 5	&mo 4	&mo 2
 >;
@@ -239,11 +239,11 @@
                 display-name = "TURBO";
 
                 bindings = <
-&kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&mmv MOVE_UP	&trans	&trans
-&kp LSHIFT	&kp A	&kp S	&kp D	&msc SCRL_UP		&trans	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
-&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&msc SCRL_DOWN		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
+&kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&msc SCRL_UP	&trans	&mmv MOVE_UP	&trans	&trans
+&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp F		&msc SCRL_DOWN	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	&trans
+&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&kp BSPC	&mkp MB1	&mkp MB3	&mkp MB2	&trans
 &kp C_MUTE	&kp LC(X)	&kp LC(C)	&kp LC(V)	&mo 1		&kp SPACE	&trans	&trans	&trans	&kp C_MUTE
-&kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&mo 7	&to 0	&mo 8	&mkp MB2	&mo 2
+&kp SPACE	&mkp MB2	&mo 8	&to 0	&to 9		&to 9	&to 0	&mo 8	&mkp MB2	&mo 2
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
@@ -256,7 +256,7 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 &kp LSHIFT	&kp NUMBER_5	&kp NUMBER_6	&kp NUMBER_7	&kp NUMBER_8		&trans	&trans	&trans	&trans	&trans
 &kp C	&kp I	&kp M	&kp N	&kp B		&trans	&trans	&trans	&trans	&trans
 &kp C_MUTE	&trans	&trans	&kp RET	&mo 1		&trans	&trans	&trans	&trans	&kp C_MUTE
-&kp SPACE	&mkp MB2	&mo 8	&to 0	&mo 7		&trans	&trans	&trans	&trans	&trans
+&kp SPACE	&mkp MB2	&mo 8	&to 0	&to 9		&trans	&trans	&trans	&trans	&trans
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;                
             };
