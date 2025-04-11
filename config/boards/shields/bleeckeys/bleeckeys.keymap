@@ -12,6 +12,12 @@
 #define IDLE_TIMEOUT_MS 5000
 #define REQ_IDLE_MS 350
 
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32 33
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 36 37 38
+#define KEYS_T 34 35 40 41 42 43 44 45 46 47 48
+
+
+
 &mmv_input_listener {
     turbo {
         layers = <7>;
@@ -66,7 +72,7 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             flavor = "balanced";
             require-prior-idle-ms = <REQ_IDLE_MS>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 36 37 38>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
         };
         hmtr: homerow_mods_right {
@@ -79,7 +85,7 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             flavor = "balanced";
             require-prior-idle-ms = <REQ_IDLE_MS>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32 33>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
         };
         hmtLayerL: homerow_layer_mods_left {
@@ -92,7 +98,7 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             flavor = "balanced";
             require-prior-idle-ms = <REQ_IDLE_MS>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 36 37 38>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
         };
         hmtLayerR: homerow_layer_mods_right {
@@ -105,7 +111,7 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             flavor = "balanced";
             require-prior-idle-ms = <REQ_IDLE_MS>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32 33>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
         };
     };
@@ -152,8 +158,8 @@
                 display-name = "BASE";
                 bindings = <
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
-&kp A	&kp S	&kp D	&kp F	&kp G		&kp H	&kp J	&kp K	&kp L	&kp SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&kp V	&kp B		&kp N	&kp M	&kp COMMA	&kp DOT	&kp SEMI
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
+&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
 &kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
 &mo 2	&mo 4	&mo 5	&to 0	&to 3		&to 3	&to 0	&mo 2	&mo 4	&mo 2
 >;
@@ -178,7 +184,7 @@
                 bindings =<
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
 &hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&trans		&trans	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
-&trans	&trans	&hmtLayerL 4 C	&hmtLayerL 5 V	&trans		&trans	&hmtLayerR 5 M	&hmtLayerR 4 COMMA	&trans	&trans
+&trans	&trans	&trans	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&trans	&trans	&trans
 &kp C_MUTE	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&kp C_MUTE
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
 >;
