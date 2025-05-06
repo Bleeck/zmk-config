@@ -172,8 +172,8 @@
                 display-name = "BASE";
                 bindings = <
 &kp Q	&kp W	&kp E	&kp R	&kp T		&kp Y	&kp U	&kp I	&kp O	&kp P
-&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
-&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SEMI
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&kp G		&kp H	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SEMI
+&kp Z	&kp X	&kp C	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&kp COMMA	&kp DOT	&kp SINGLE_QUOTE
 &kp C_MUTE	&kp LGUI	&kp LCTRL	&kp RET	&mo 1		&kp SPACE	&kp RET	&kp LSHIFT	&kp LGUI	&kp C_MUTE
 &caps_word	&kp LSHIFT	&mo 5	&base_layer_macro	&nav_layer_macro		&nav_layer_macro	&base_layer_macro	&mo 2	&kp LSHIFT	&mo 1
 >;
@@ -197,7 +197,7 @@
                 display-name = "HOMEROW";
                 bindings =<
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&trans		&trans	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SINGLE_QUOTE
+&hmtl LSHIFT A	&hmtl LALT S	&hmtl LCTRL D	&hmtl LGUI F	&trans		&trans	&hmtr LGUI J	&hmtr LCTRL K	&hmtr LALT  L	&hmtr LSHIFT SEMI
 &trans	&trans	&trans	&hmtLayerL 4 V	&hmtLayerL 5 B		&hmtLayerR 5 N	&hmtLayerR 4 M	&trans	&trans	&trans
 &kp C_MUTE	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&kp C_MUTE
 &trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
