@@ -150,8 +150,8 @@
         };
         combo_bluetooth{
             timeout-ms=<200>;
-            key-positions = <40 42 44>;
-            bindings = <&tog 6>;
+            key-positions = <1 2 3>;
+            bindings = <&tog 1>;
         };
 //        combo_homerow{
 //            timeout-ms=<200>;
@@ -177,6 +177,20 @@
 &kp LSHFT &kp Z  &kp X    &kp C    &kp V    &kp B                      &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                  &kp LGUI &kp LALT &kp RET  &kp C_MUTE                        &kp RET  &kp RALT  &kp RGUI
           &kp A     &kp B &kp C    &kp D    &kp E                      &kp F  &kp G    &kp H     &kp I   &kp J
+            >;
+
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
+
+            bt_layer {
+                display-name = "BT";
+            bindings = <
+&trans  &trans          &trans          &trans                                            &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_SEL 4      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_DISC 0	&bt BT_DISC 1	&bt BT_DISC 2	&bt BT_DISC 3	&bt BT_DISC 4     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_CLR      &trans          &trans          &trans          &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans          &trans          &trans          &trans            &trans  &trans  &trans
+        &trans          &trans          &trans          &trans          &trans            &trans  &trans  &trans  &trans  &trans
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
