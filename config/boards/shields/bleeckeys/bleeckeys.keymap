@@ -143,7 +143,7 @@
         combo_capslock {
             timeout-ms = <200>;
             key-positions = <20 31>;
-            bindings = <&caps_lock>;
+            bindings = <&&kp CAPSLOCK>;
         };
         
         combo_capsmod_right {
