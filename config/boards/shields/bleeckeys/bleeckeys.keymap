@@ -72,7 +72,7 @@
         #binding-cells = <0>;
         wait-ms = <30>;
         tap-ms = <40>;
-        bindings = <&kp F24 &to 2>;
+        bindings = <&kp F24 &to 3>;
         };
     };
 
