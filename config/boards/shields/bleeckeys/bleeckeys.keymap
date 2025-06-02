@@ -111,7 +111,6 @@
 &trans	&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -121,12 +120,11 @@
                 display-name = "NAV";
             bindings = <
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
-&trans	&kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&kp TAB	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&trans	&trans	&trans	&trans
 &trans	&kp LSHIFT	&kp A	&kp S	&kp D	&kp F		&trans	&trans	&trans	&trans	&trans	&trans
 &trans	&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&trans	&trans	&trans	&trans	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&kp SPACE			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -141,7 +139,6 @@
 &trans	&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&trans	&trans	&trans	&trans	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&kp SPACE			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -156,7 +153,6 @@
 &trans	&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -171,7 +167,6 @@
 &trans	&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0		&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -186,7 +181,6 @@
 &trans	&kp F13	&kp F14	&kp F15	&kp F22	&kp LC(LA(GRAVE))		&kp LC(LS(ESC))	&kp F1	&kp F2	&kp F3	&kp F10	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -201,7 +195,6 @@
 &trans	&kp LC(LS(ESC))	&kp F1	&kp F2	&kp F3	&kp F10		&kp F13	&kp F14	&kp F15	&kp F22	&kp LC(LA(GRAVE))	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -216,7 +209,6 @@
 &trans	&bt BT_CLR	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&bootloader	&trans	&trans			&trans	&trans	&bootloader	&trans	&trans
-
             >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
