@@ -122,7 +122,7 @@
             bindings = <
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
 &trans	&kp LALT	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&trans	&trans	&trans	&trans
-&trans	&kp LSHIFT	&kp S	&kp D	&kp F	&kp F		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&kp LSHIFT	&kp A	&kp S	&kp D	&kp F		&trans	&trans	&trans	&trans	&trans	&trans
 &trans	&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&trans	&trans	&trans	&trans	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&kp SPACE			&trans	&trans	&trans	&trans	&trans
