@@ -108,7 +108,7 @@
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
 &trans	&kp ESC	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans	&trans
 &trans	&kp LSHIFT	&kp LALT	&kp LCTRL	&kp BSPC	&kp DEL		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans
-&trans	&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&trans	&trans
+&trans	&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
             >;
