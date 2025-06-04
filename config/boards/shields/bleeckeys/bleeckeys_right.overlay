@@ -16,3 +16,11 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
 };
+
+&glidepoint{
+    status = "okay";
+};
+
+&glidepoint_listener{
+    status = "okay";
+}
