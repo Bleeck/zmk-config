@@ -7,14 +7,23 @@ if SHIELD_BLEECKEYS_LEFT
         default y
 endif
 
+if SHIELD_BLEECKEYS_RIGHT
+
+# Assuming pointing device uses SPI
+config SPI
+    default y
+
+endif
+
+
 if SHIELD_BLEECKEYS_LEFT || SHIELD_BLEECKEYS_RIGHT
     config ZMK_POINTING
         default y
 
-    config SPI
+    config ZMK_SPLIT
         default y
 
-    config ZMK_SPLIT
+    config ZMK_POINTING
         default y
 
     if ZMK_DISPLAY

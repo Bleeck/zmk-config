@@ -17,16 +17,21 @@
         ;
 };
 
-// Node from the previous Input Device section
-&pro_micro_i2c {
+&pro_micro_spi {
     status = "okay";
+    cs-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>;
+
     glidepoint: glidepoint@0 {
         compatible = "cirque,pinnacle";
         reg = <0>;
+        spi-max-frequency = <1000000>;
         status = "okay";
-        /*sensitivity = "4x";*/
-        /*sleep;*/
-        /*no-taps;*/
+        dr-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "2x";  // Smaller number increases sensitivity
+        sleep;
+        //no-taps;
+        //y-invert;
     };
 };
 
@@ -35,5 +40,5 @@
     device = <&glidepoint>;
 
     // Optional
-    /*input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;*/
+    //input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
