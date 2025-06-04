@@ -8,6 +8,12 @@ if SHIELD_BLEECKEYS_LEFT
 endif
 
 if SHIELD_BLEECKEYS_LEFT || SHIELD_BLEECKEYS_RIGHT
+    config ZMK_POINTING
+        default y
+
+    config SPI
+        default y
+
     config ZMK_SPLIT
         default y
 
