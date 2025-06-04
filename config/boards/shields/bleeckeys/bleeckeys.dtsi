@@ -72,7 +72,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
 
 };
 
-
 &pro_micro_i2c {
     status = "okay";
 
@@ -90,22 +89,5 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
-    };
-};
-
-&pro_micro_spi {
-    status = "okay";
-    cs-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>;
-
-    glidepoint: glidepoint@0 {
-        compatible = "cirque,pinnacle";
-        reg = <0>;
-        spi-max-frequency = <1000000>;
-        status = "okay";
-        dr-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "4x";
-        sleep;
-        no-taps;
     };
 };
