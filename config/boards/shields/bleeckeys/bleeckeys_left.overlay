@@ -12,6 +12,3 @@
         ;
 };
 
-&glidepoint_listener {
-    status = "okay";
-};
