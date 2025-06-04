@@ -16,3 +16,24 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
 };
+
+// Node from the previous Input Device section
+&pro_micro_i2c {
+    status = "okay";
+    glidepoint: glidepoint@0 {
+        compatible = "cirque,pinnacle";
+        reg = <0>;
+        status = "okay";
+        /*sensitivity = "4x";*/
+        /*sleep;*/
+        /*no-taps;*/
+    };
+};
+
+// Overrides for the input-split child node
+&glidepoint_split {
+    device = <&glidepoint>;
+
+    // Optional
+    /*input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;*/
+};
