@@ -5,6 +5,13 @@
     col-offset = <6>;
 };
 
+
+/ {
+    chosen {
+        zmk,input = &glidepoint;
+    };
+};
+
 // Label of the kscan node in the dtsi
 &kscan0 {
     col-gpios
