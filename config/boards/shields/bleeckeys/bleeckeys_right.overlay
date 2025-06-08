@@ -1,6 +1,7 @@
 #include "bleeckeys.dtsi" // The shared dtsi file is included in the overlay
 #include <input/processors.dtsi>
-
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
