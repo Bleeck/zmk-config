@@ -48,7 +48,7 @@
         reg = <0x2a>;
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "8x";
+        sensitivity = "4x";
         sleep;
     };
 };
