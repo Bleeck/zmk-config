@@ -10,7 +10,7 @@ endif
 if SHIELD_BLEECKEYS_RIGHT
 
 # Assuming pointing device uses SPI
-config SPI
+config I2C
     default y
 
 endif
