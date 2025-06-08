@@ -47,7 +47,7 @@
         compatible = "cirque,pinnacle";
         status = "okay";
         reg = <0x2a>;
-        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+        //dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
         sleep;
