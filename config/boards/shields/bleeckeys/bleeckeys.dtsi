@@ -103,6 +103,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
     };
 };
 
+&zip_gestures {
+    tap-detection;
+    prevent_movement_during_tap;
+    inertial-cursor;
+    circular-scroll;
+    circular-scroll-rim-percent=<15>;
+};
+
 / {
     split_inputs {
         #address-cells = <1>;
@@ -122,5 +130,13 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
             &zip_absolute_to_relative
             &zip_scroll_scaler 6 3
             >;
+        scroller {
+            layers = <5>;
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
+                &zip_xy_scaler 1 20
+                &zip_xy_to_scroll_mapper
+            >;
+        };
     };
 };
