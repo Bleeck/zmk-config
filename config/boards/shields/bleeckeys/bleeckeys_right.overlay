@@ -50,6 +50,7 @@
 
         sensitivity = "4x";
         //sleep;
+        absolute-mode;
     };
 };
 
