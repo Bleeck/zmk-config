@@ -65,7 +65,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
         triggers-per-rotation = <30>;
     };
     
-    split_inputs {
+/*    split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
@@ -80,7 +80,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
         status = "disabled";
         device = <&glidepoint_split>;
     };
-
+*/
 };
 
 &pro_micro_i2c {
@@ -134,10 +134,11 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
         scroller {
             layers = <5>;
             input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
                 &zip_xy_scaler 1 20
                 &zip_xy_to_scroll_mapper
             >;
         };
     };
 };
+
+//                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
