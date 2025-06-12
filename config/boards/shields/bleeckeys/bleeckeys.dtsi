@@ -129,7 +129,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
         input-processors = <
             // &zip_gestures
             &zip_absolute_to_relative
-            &zip_scroll_scaler 6 3
+            &zip_scroll_scaler 4 2
             >;
 //        scroller {
 //            layers = <5>;
