@@ -124,9 +124,9 @@
                 display-name = "NAV";
             bindings = <
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
-&trans	&kp TAB	&kp Q	&kp W	&kp E	&kp R		&trans	&trans	&trans	&trans	&trans	&trans
-&trans	&kp LSHIFT	&kp A	&kp S	&kp D	&kp F		&trans	&trans	&trans	&trans	&trans	&trans
-&trans	&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&kp SPACE			&trans	&trans	&trans	&trans	&trans
             >;
@@ -138,9 +138,9 @@
                 display-name = "NAV ARROW";
             bindings = <
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
-&trans	&kp LALT	&kp Q	&kp UP_ARROW	&kp E	&kp R		&trans	&trans	&trans	&trans	&trans	&trans
-&trans	&kp LSHIFT	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp F		&trans	&trans	&trans	&trans	&trans	&trans
-&trans	&kp LCTRL	&mkp MB1	&mkp MB3	&mkp MB2	&trans		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&kp UP_ARROW	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&kp SPACE			&trans	&trans	&trans	&trans	&trans
             >;
@@ -151,10 +151,10 @@
             symbol_left_layer {
                 display-name = "SYM LEFT";
             bindings = <
-&trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
+&trans	&trans	&kp DOT	&kp COMMA						&kp COMMA	&kp DOT	&trans	&trans
 &trans	&kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS	&trans
-&trans	&trans	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL	&trans
-&trans	&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0	&trans
+&trans	&trans	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL	&mt  
+&trans	&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0	&mt  
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
             >;
@@ -165,7 +165,7 @@
             symbol_right_layer {
                 display-name = "SYM RIGHT";
             bindings = <
-&trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
+&trans	&trans	&kp DOT	&kp COMMA						&kp COMMA	&kp DOT	&trans	&trans
 &trans	&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS		&kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN	&trans
 &trans	&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL		&trans	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL	&trans
 &trans	&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0		&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK	&trans
