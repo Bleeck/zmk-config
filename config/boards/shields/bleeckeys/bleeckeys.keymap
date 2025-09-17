@@ -71,12 +71,12 @@
         };
         combo_invertKeys_left {
             timeout-ms = <200>;
-            key-positions = <54 55>;
+            key-positions = <52 54>;
             bindings = <&mo 9>;
         };
         combo_invertKeys_right {
             timeout-ms = <200>;
-            key-positions = <56 57>;
+            key-positions = <57 59>;
             bindings = <&mo 9>;
         };
         combo_bluetooth{
