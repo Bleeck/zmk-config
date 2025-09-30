@@ -110,8 +110,8 @@
                 display-name = "CAPS MOD";
             bindings = <
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
-&trans	&kp ESC	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans	&trans
-&trans	&kp LSHIFT	&kp LALT	&kp LCTRL	&kp BSPC	&kp DEL		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans
+&trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans	&trans
+&trans	&kp LALT	&kp LSHIFT	&kp LCTRL	&kp BSPC	&kp DEL		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans
 &trans	&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
@@ -151,11 +151,11 @@
             symbol_left_layer {
                 display-name = "SYM LEFT";
             bindings = <
-&trans	&trans	&kp COMMA	&kp DOT						&kp DOT	&kp COMMA	&trans	&trans
-&trans	&kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS	&trans
-&trans	&trans	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL		&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL	&trans
-&trans	&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0	&trans
-		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
+&trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
+&trans	&trans	&trans	&trans	&trans	&trans		&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS	&trans
+&trans	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp SEMI		&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL	&trans
+&trans	&trans	&trans	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE		&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0	&trans
+		&kp COMMA	&trans	&kp DOT	&trans			&kp DOT	&trans	&kp COMMA		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
             >;
 
@@ -165,11 +165,11 @@
             symbol_right_layer {
                 display-name = "SYM RIGHT";
             bindings = <
-&trans	&trans	&kp COMMA	&kp DOT						&kp DOT	&kp COMMA	&trans	&trans
-&trans	&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS		&kp GRAVE	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp LESS_THAN	&kp GREATER_THAN	&trans
-&trans	&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL		&trans	&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp SEMICOLON	&kp EQUAL	&trans
-&trans	&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0		&kp MINUS	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&kp ASTERISK	&trans
-		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
+&trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
+&trans	&kp SLASH	&kp NUMBER_7	&kp NUMBER_8	&kp NUMBER_9	&kp MINUS		&trans	&trans	&trans	&trans	&trans	&trans
+&trans	&kp BACKSLASH	&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&kp EQUAL		&kp LEFT_PARENTHESIS	&kp RIGHT_PARENTHESIS	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&kp SEMI	&trans
+&trans	&kp BSPC	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp NUMBER_0		&trans	&trans	&kp LEFT_BRACE	&kp RIGHT_BRACE	&kp SINGLE_QUOTE	&trans
+		&kp COMMA	&trans	&kp DOT	&trans			&kp DOT	&trans	&kp COMMA		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
             >;
 
