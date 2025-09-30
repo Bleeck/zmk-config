@@ -74,6 +74,11 @@
             key-positions = <52 54>;
             bindings = <&mo 9>;
         };
+        combo_invertCapsMod{
+            timeout-ms = <200>;
+            key-positions = <52 55>;
+            bindings = <&mo 10>;
+        };
         combo_invertKeys_right {
             timeout-ms = <200>;
             key-positions = <57 59>;
@@ -225,6 +230,20 @@
 &trans	&kp Y	&kp U	&kp I	&kp O	&kp P		&kp Q	&kp W	&kp E	&kp R	&kp T	&trans
 &trans	&kp H	&kp J	&kp K	&kp L	&kp SEMI		&kp A	&kp S	&kp D	&kp F	&kp G	&trans
 &trans	&kp N	&kp M	&kp COMMA	&kp DOT	&kp SINGLE_QUOTE		&kp Z	&kp X	&kp C	&kp V	&kp B	&trans
+		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
+	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
+            >;
+
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
+
+            caps_mod_inverted {
+                display-name = "CAPSMOD INV";
+                bindings = <
+                &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
+&kp END	&kp UP_ARROW	&kp HOME	&kp PAGE_UP	&trans	&trans		&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&trans
+&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp PAGE_DOWN	&kp BSPC	&kp DEL		&kp LALT	&kp LSHIFT	&kp LCTRL	&kp BSPC	&kp DEL	&trans
+&trans	&trans	&trans	&trans	&trans	&trans		&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
             >;
