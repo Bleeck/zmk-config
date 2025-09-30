@@ -124,7 +124,7 @@
 &trans	&trans	&trans	&trans						&trans	&trans	&trans	&trans
 &trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)		&kp PAGE_UP	&kp HOME	&kp UP_ARROW	&kp END	&trans	&trans
 &trans	&kp LALT	&kp LSHIFT	&kp LCTRL	&kp BSPC	&kp DEL		&kp PAGE_DOWN	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans
-&trans	&left_double_click	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&trans	&trans
+&trans	&left_double_click_macro	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE		&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&trans	&trans
 		&trans	&trans	&trans	&trans			&trans	&trans	&trans		
 	&trans	&trans	&trans	&trans	&trans			&trans	&trans	&trans	&trans	&trans
             >;
