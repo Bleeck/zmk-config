@@ -60,7 +60,7 @@
         tap-ms = <40>;
         bindings = <&kp F24 &to 3>;
         };
-    left_double_click {
+    left_double_click_macro: left_double_click_macro {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <30>;
