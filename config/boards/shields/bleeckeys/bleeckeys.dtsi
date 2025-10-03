@@ -105,11 +105,13 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
 
 &zip_gestures {
     tap-detection;
-    tap-timout-ms=<120>;
+    tap-timeout-ms=<120>;
     prevent_movement_during_tap;
+
     inertial-cursor;
     inertial-cursor-velocity-threshold-ms=<20>;
     inertial-cursor-decay-percent=<98>;
+    
     circular-scroll;
     circular-scroll-rim-percent=<15>;
     circular-scroll-width=<1024>;
