@@ -132,7 +132,7 @@
             navigation_layer {												
                 display-name = "NAV";												
             bindings = <												
-	&trans	&trans	&trans	&trans	0	0	0	0	&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
@@ -144,7 +144,7 @@
             nav_arrow_layer {												
                 display-name = "NAV ARROW";												
             bindings = <												
-	&trans	&trans	&trans	&trans			0	0	&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
 	&trans	&trans	&kp UP_ARROW	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 	&trans	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
