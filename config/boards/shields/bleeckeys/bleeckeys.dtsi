@@ -105,7 +105,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
 
 &zip_gestures {
     tap-detection;
-    prevent_movement_during_tap;
+    //prevent_movement_during_tap;
 
     //inertial-cursor;
     //inertial-cursor-velocity-threshold=<20>;
@@ -113,8 +113,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
     
     circular-scroll;
     circular-scroll-rim-percent=<5>;
-    circular-scroll-width=<1920>;
-    circular-scroll-height=<1472>;
+    circular-scroll-width=<1024>;
+    circular-scroll-height=<1024>;
 };
 
 / {
