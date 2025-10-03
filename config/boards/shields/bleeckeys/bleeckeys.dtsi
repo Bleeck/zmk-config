@@ -112,7 +112,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
     inertial-cursor-decay-percent=<98>;
     
     circular-scroll;
-    circular-scroll-rim-percent=<15>;
+    circular-scroll-rim-percent=<5>;
     circular-scroll-width=<1024>;
     circular-scroll-height=<1024>;
 };
@@ -140,7 +140,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)        RC(3,6) RC(3,7) RC(3,8) R
             // You have this line only if you're using absolute mode
             &zip_absolute_to_relative
 
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+            //&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
             &zip_temp_layer 3 100
         >;
     };
