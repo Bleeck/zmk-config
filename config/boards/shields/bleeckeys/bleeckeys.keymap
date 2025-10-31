@@ -105,7 +105,7 @@
             timeout-ms = <50>;
             key-positions = <52 51>;
             #bindings = <&mo 11>;
-            bindings = <&lm 11 LGUI>;
+            bindings = <&lm F22 LGUI>;
         };
     };
     keymap {												
@@ -247,10 +247,10 @@
                 display-name = "WIN NAV";												
             bindings = <												
 	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
-	&trans	&trans	&kp UP_ARROW	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-	&trans	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&kp PLUS	&kp MINUS	&kp LEFT_BRACKET	&kp RIGHT_BRACKET	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 	&trans	&trans	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-			&trans	&trans	&trans	&trans		&trans	&trans	&trans		
+			&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
             >;												
                 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;												
