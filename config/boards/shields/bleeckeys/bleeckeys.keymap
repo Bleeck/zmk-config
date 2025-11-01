@@ -248,7 +248,7 @@
             bindings = <												
 	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
 	&trans	&kp Q	&kp W	&kp E	&kp R	&kp T	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp UP_ARROW	&kp RIGHT_ARROW	&kp P	&kp TAB
-	&trans	&trans	&kp S	&kp D	&kp F	&kp G	&kp H	&kp J	&kp K	&kp L	&kp SEMI	&kp H
+	&trans	&trans	&kp LSHIFT	&kp D	&kp F	&kp G	&kp H	&kp J	&kp K	&kp L	&kp SEMI	&kp H
 	&trans	&kp Z	&kp NUMBER_1	&kp NUMBER_2	&kp NUMBER_3	&kp B	&kp N	&kp M	&kp COMMA	&kp DOT	&kp SINGLE_QUOTE	&kp N
 			&kp NUMBER_4	&kp NUMBER_5	&kp NUMBER_6	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
