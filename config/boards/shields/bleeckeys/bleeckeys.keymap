@@ -103,9 +103,9 @@
         };
         combo_win_nav_left {
             timeout-ms = <50>;
-            key-positions = <52 51>;
+            key-positions = <21 55>;
             #bindings = <&mo 11>;
-            bindings = <&lm 11 F22>;
+            bindings = <&lm 11 F20>;
         };
     };
     keymap {												
