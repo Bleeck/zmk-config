@@ -128,7 +128,7 @@
             bindings = <												
 	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
 	&trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp HOME	&kp PAGE_DOWN	&kp PAGE_UP	&kp END	&trans	&trans
-	&trans	&trans	&kp RET	&kp ESC	&kp BSPC	&kp DEL	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp UP_ARROW	&kp RIGHT_ARROW	&trans	&trans
+	&trans	&lm 11 F20	&kp RET	&kp ESC	&kp BSPC	&kp DEL	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp UP_ARROW	&kp RIGHT_ARROW	&trans	&trans
 	&trans	&left_double_click_macro	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE	&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&kp K_CONTEXT_MENU	&trans
 			&trans	&trans	&trans	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
