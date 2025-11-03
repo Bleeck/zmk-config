@@ -111,12 +111,12 @@
             timeout-ms = <50>;
             key_positions = < 1 55>;
             bindings = <&bt BT_SEL 0>;
-        }
+        };
         combo_win_bt2 {
             timeout-ms = <50>;
             key_positions = < 1 55>;
             bindings = <&bt BT_SEL 1>;
-        }
+        };
         combo_win_bt3 {
             timeout-ms = <50>;
             key_positions = < 1 55>;
