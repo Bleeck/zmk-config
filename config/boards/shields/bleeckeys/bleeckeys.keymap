@@ -107,21 +107,6 @@
             #bindings = <&mo 11>;
             bindings = <&lm 11 F20>;
         };
-        combo_win_bt1 {
-            timeout-ms = <50>;
-            key-positions = < 1 55>;
-            bindings = <&bt BT_SEL 0>;
-        };
-        combo_win_bt2 {
-            timeout-ms = <50>;
-            key-positions = < 2 55>;
-            bindings = <&bt BT_SEL 1>;
-        };
-        combo_win_bt3 {
-            timeout-ms = <50>;
-            key-positions = < 3 55>;
-            bindings = <&bt BT_SEL 2>;
-        };
     };
     keymap {												
         compatible = "zmk,keymap";												
@@ -141,7 +126,7 @@
             capsmod_layer {												
                 display-name = "CAPS MOD";												
             bindings = <												
-	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
+	&trans	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2					&trans	&trans	&trans	&trans
 	&trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp HOME	&kp PAGE_DOWN	&kp PAGE_UP	&kp END	&trans	&trans
 	&trans	&lm 11 F20	&kp RET	&kp ESC	&kp BSPC	&kp DEL	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp UP_ARROW	&kp RIGHT_ARROW	&trans	&trans
 	&trans	&left_double_click_macro	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE	&kp BSPC	&kp DEL	&kp LESS_THAN	&kp GREATER_THAN	&kp K_CONTEXT_MENU	&trans
