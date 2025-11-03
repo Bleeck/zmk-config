@@ -6,7 +6,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>    
 #include <dt-bindings/zmk/outputs.h>
-#include <cirque_scroll_singlelayer.dtsi>
 
 #define QUICK_TAP_MS 125
 #define TAPPING_TERM_MS 150
