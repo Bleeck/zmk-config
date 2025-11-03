@@ -121,7 +121,7 @@
             timeout-ms = <50>;
             key_positions = < 3 55>;
             bindings = <&bt BT_SEL 2>;
-        }
+        };
     };
     keymap {												
         compatible = "zmk,keymap";												
