@@ -248,7 +248,7 @@
             bindings = <												
 	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-	&trans	&trans	&kp LSHIFT	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 			&trans	&trans	&trans	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
