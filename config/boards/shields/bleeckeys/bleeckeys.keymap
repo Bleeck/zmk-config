@@ -103,7 +103,7 @@
         };
         combo_win_nav_left {
             timeout-ms = <150>;
-            key-positions = <55 55>;
+            key-positions = <54 55>;
             #bindings = <&mo 11>;
             bindings = <&lm 11 F20>;
         };
