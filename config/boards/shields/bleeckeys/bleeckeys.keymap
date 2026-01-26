@@ -103,7 +103,7 @@
         };
         combo_win_nav_left {
             timeout-ms = <150>;
-            key-positions = <21 55>;
+            key-positions = <55 55>;
             #bindings = <&mo 11>;
             bindings = <&lm 11 F20>;
         };
@@ -235,8 +235,8 @@
                 display-name = "CAPS M INV";												
                 bindings = <												
 	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
-	&trans	&kp END	&kp UP_ARROW	&kp HOME	&kp PAGE_UP	&trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&trans
-	&trans	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp RIGHT_ARROW	&kp PAGE_DOWN	&trans	&kp LALT	&kp LSHIFT	&kp LCTRL	&kp BSPC	&kp DEL	&trans
+	&trans	&kp HOME	&kp PAGE_DOWN	&kp PAGE_UP	&kp END	&trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&trans
+	&trans	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp UP_ARROW	&kp RIGHT_ARROW	&trans	&kp LALT	&kp LSHIFT	&kp LCTRL	&kp BSPC	&kp DEL	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE	&trans
 			&trans	&trans	&trans	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
