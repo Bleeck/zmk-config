@@ -34,7 +34,6 @@ for b in builds:
 EOF
 )
 
-rm -f /out/*.uf2
 failed=()
 while IFS='|' read -r board shield snippet cmake_args artifact_name; do
     [ -n "$board" ] || continue

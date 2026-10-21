@@ -1,5 +1,5 @@
 # Builds the firmware locally in Docker, the same way the GitHub workflow does.
-# Output: firmware\*.uf2 in the repo root.
+# Output: firmware\<date_time>\*.uf2 in the repo root, a new folder per build; old builds are kept.
 # -Clean deletes the cached west workspace and builds from scratch.
 param([switch]$Clean)
 
@@ -10,7 +10,7 @@ $Image = 'zmkfirmware/zmk-build-arm:3.5-branch-20250930025731-3.5.0-0.16.3-f9329
 $Volume = 'zmk-config-bleeckeys-workspace'
 
 $Repo = Split-Path -Parent $PSScriptRoot
-$Out = Join-Path $Repo 'firmware'
+$Out = Join-Path $Repo 'firmware' (Get-Date -Format 'yyyy-MM-dd_HH-mm-ss')
 
 function Test-Docker {
     docker info *> $null
