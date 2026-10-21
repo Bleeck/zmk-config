@@ -24,3 +24,7 @@ Findings (builder hand-back, verified by the coordinator):
 - Caps Lock inversion sends the SSD1306 reverse command (0xA6/0xA7) over I2C on the display work queue; Zephyr 3.5's driver has no invert API.
 - The BT symbol blinks instead of pulsing (1-bit panel); the keyboard symbol before the layer name was dropped to fit "CAPS M INV" beside the WPM graph; the right battery shows "--" after the link drops instead of ZMK's 0%.
 - LVGL heap raised 4096 -> 8192 (estimate, not measured on the board). Left build: flash 414352 B (51%), RAM 84020 B (32%). All three targets build; nothing checked on the hardware yet.
+
+## Right-half icon and WPM graph removed, 2026-10-21
+
+The user's word after seeing the screen: the right-half icon (task 9) goes, the "--" for the right battery is enough; the WPM graph (task 13) goes, and `CONFIG_ZMK_WPM` with it. The layer name row now spans the full width.
