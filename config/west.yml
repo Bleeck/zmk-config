@@ -8,24 +8,52 @@ manifest:
     #  url-base: https://github.com/petejohanson
     - name: halfdane
       url-base: https://github.com/halfdane/
+  # Every revision below is a commit SHA so upstream changes can't break the build.
+  # To update, replace a SHA with the newer commit you want.
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: edf5c0814fd3ea202e43aad2d68fd32e882a518c # tag v0.3
       import: app/west.yml
+    # Overrides the zephyr entry from zmk's app/west.yml, which tracks the
+    # branch v3.5.0+zmk-fixes. Import blocklist copied from zmk v0.3.
+    - name: zephyr
+      remote: zmkfirmware
+      revision: dacab4875df72109b96cc8977547a0dc04875bcd # branch v3.5.0+zmk-fixes
+      clone-depth: 1
+      import:
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_silabs
+          - hal_xtensa
+          - hal_st
+          - hal_ti
+          - loramac-node
+          - mcuboot
+          - mcumgr
+          - net-tools
+          - openthread
+          - edtt
+          - trusted-firmware-m
     #- name: cirque-input-module
     #  remote: petejohanson
     #  revision: main
     # Add this:
     - name: zmk-input-gestures
       remote: halfdane
-      revision: main
+      revision: c6590627ec627f49582ee945b880762fc715c2c9 # branch main
     # Add these if you want to use absolute mode:
     - name: zmk-input-processors
       remote: halfdane
-      revision: main
+      revision: 7d18ba7af91e485bbd9febda150505fb38ce6d8a # branch main
     - name: cirque-input-module
       remote: halfdane
-      revision: absolute_mode
+      revision: 7eaf1286f361a3fcaf468b233ad29665d5987135 # branch absolute_mode
   self:
     path: config
