@@ -8,6 +8,8 @@ manifest:
     #  url-base: https://github.com/petejohanson
     - name: halfdane
       url-base: https://github.com/halfdane/
+    - name: te9no
+      url-base: https://github.com/te9no
   # Every revision below is a commit SHA so upstream changes can't break the build.
   # To update, replace a SHA with the newer commit you want.
   projects:
@@ -55,5 +57,9 @@ manifest:
     - name: cirque-input-module
       remote: halfdane
       revision: 7eaf1286f361a3fcaf468b233ad29665d5987135 # branch absolute_mode
+    # Turns trackpad swipes into key presses (caps-mod swipes)
+    - name: zmk-input-processor-keybind
+      remote: te9no
+      revision: 10ad463f2e3c7a7dfb4b7cffd6bddd0e9e8b5bae # branch main
   self:
     path: config
