@@ -17,7 +17,17 @@
     chosen {
         zephyr,display = &oled;
         zmk,physical-layout = &physical_layout0;
+        zmk,battery = &bleeckeys_battery;
         // Other chosen items
+    };
+
+    // Battery % for the 2x NCR18650B per half: 0% at 3.19 V, where the halves
+    // still run fine (ZMK's default puts 0% at 3.45 V). Driver: battery.c
+    bleeckeys_battery: bleeckeys_battery {
+        compatible = "bleeckeys,battery";
+        voltage-source = <&vbatt>;
+        min-mv = <3190>;
+        max-mv = <4200>;
     };
 
     kscan0: kscan0 {

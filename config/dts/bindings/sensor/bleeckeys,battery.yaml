@@ -1,0 +1,21 @@
+description: |
+  Battery level for bleecKEYS: reads the voltage from another battery sensor
+  and maps min-mv..max-mv linearly to 0..100%.
+
+compatible: "bleeckeys,battery"
+
+include: base.yaml
+
+properties:
+  voltage-source:
+    type: phandle
+    required: true
+    description: Battery sensor that provides SENSOR_CHAN_GAUGE_VOLTAGE.
+  min-mv:
+    type: int
+    required: true
+    description: Voltage reported as 0%.
+  max-mv:
+    type: int
+    required: true
+    description: Voltage reported as 100%.
