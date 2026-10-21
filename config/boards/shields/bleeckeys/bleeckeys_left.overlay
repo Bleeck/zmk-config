@@ -2,16 +2,20 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    // While CAPS MOD (layer 1) is active, a swipe taps Win + arrow in its direction.
-    // A held Shift is added by the OS as usual (Win + Shift + arrow).
-    // tick: swipe length needed per tap (pad is scaled to 1024).
-    zip_capsmod_swipe: zip_capsmod_swipe {
-        compatible = "zmk,input-processor-keybind";
+    // While SYM LEFT or SYM RIGHT (layers 4, 5) is held, a swipe taps Win + arrow in
+    // its direction, once per touch. A held Shift is added by the OS as usual
+    // (Win + Shift + arrow). tick: swipe length needed (pad is 1024). Driver: swipe.c
+    zip_sym_swipe: zip_sym_swipe {
+        compatible = "bleeckeys,swipe";
         #input-processor-cells = <0>;
         bindings = <&kp LG(RIGHT)>, <&kp LG(LEFT)>, <&kp LG(UP)>, <&kp LG(DOWN)>;
-        mode = <1>;
-        tick = <350>;
-        max_pending_activations = <1>;
+        tick = <200>;
+    };
+
+    // Tap to click, double tap, tap-and-hold drag, edge motion. Driver: trackpad.c
+    zip_trackpad: zip_trackpad {
+        compatible = "bleeckeys,trackpad";
+        #input-processor-cells = <0>;
     };
 };
 
@@ -29,9 +33,10 @@
 
 &glidepoint_listener {
     status = "okay";
+    input-processors = <&zip_gestures &zip_absolute_to_relative &zip_trackpad>;
 
-    capsmod_swipe {
-        layers = <1>;
-        input-processors = <&zip_absolute_to_relative &zip_capsmod_swipe>;
+    sym_swipe {
+        layers = <4 5>;
+        input-processors = <&zip_absolute_to_relative &zip_sym_swipe>;
     };
 };

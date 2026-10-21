@@ -1,0 +1,48 @@
+description: |
+  Input processor for bleecKEYS: tap to click, double tap to double click,
+  tap then touch-and-hold to drag (button held until the finger lifts), and
+  edge motion (the cursor keeps moving while a finger rests at the pad's edge).
+  Goes after zip_absolute_to_relative.
+
+compatible: "bleeckeys,trackpad"
+
+include: ip_zero_param.yaml
+
+properties:
+  width:
+    type: int
+    default: 1024
+    description: Pad width in absolute units (absolute-mode-scale-to-width).
+  height:
+    type: int
+    default: 1024
+    description: Pad height in absolute units (absolute-mode-scale-to-height).
+  tap-ms:
+    type: int
+    default: 150
+    description: A touch shorter than this (and moving less than tap-max-move) is a tap.
+  tap-max-move:
+    type: int
+    default: 30
+    description: Most movement a tap may have, in pad units.
+  double-tap-ms:
+    type: int
+    default: 150
+    description: |
+      Time after a tap is detected (touch-end-ms after the lift) in which a second
+      touch makes a double tap or a drag.
+  touch-end-ms:
+    type: int
+    default: 100
+    description: |
+      No report for this long means the finger lifted. The pad's reports reach the
+      left half over BLE with gaps of up to ~80 ms during a continuous touch, so
+      shorter values split drags into accidental taps.
+  edge-margin:
+    type: int
+    default: 60
+    description: Width of the edge border, in pad units.
+  edge-speed:
+    type: int
+    default: 4
+    description: Cursor movement added per report while the finger is in the edge border.

@@ -1,0 +1,18 @@
+description: |
+  Input processor for bleecKEYS: turns one swipe into one tap of a behavior.
+  Movement is counted per touch; the first axis to reach tick fires the
+  binding for its direction, once, and the rest of that touch is ignored.
+
+compatible: "bleeckeys,swipe"
+
+include: ip_zero_param.yaml
+
+properties:
+  bindings:
+    type: phandle-array
+    required: true
+    description: Exactly four bindings, in the order right, left, up, down.
+  tick:
+    type: int
+    required: true
+    description: Movement along one axis needed to fire (pad is scaled to 1024).
