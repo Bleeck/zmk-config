@@ -110,7 +110,7 @@
 			&trans	&trans	&trans	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
             >;												
-                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;												
+                sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;												
             };												
             navigation_layer {												
                 display-name = "NAV";												
@@ -158,7 +158,7 @@
 			&kp COMMA	&trans	&kp DOT	&trans		&trans	&trans	&trans		
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
             >;												
-                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;												
+                sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;												
             };												
             func_left_layer {												
                 display-name = "FUNC LEFT";												
