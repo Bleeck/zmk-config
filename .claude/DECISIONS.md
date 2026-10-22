@@ -28,3 +28,7 @@ Findings (builder hand-back, verified by the coordinator):
 ## Right-half icon and WPM graph removed, 2026-10-21
 
 The user's word after seeing the screen: the right-half icon (task 9) goes, the "--" for the right battery is enough; the WPM graph (task 13) goes, and `CONFIG_ZMK_WPM` with it. The layer name row now spans the full width.
+
+## Missed key presses on the left half, 2026-10-22
+
+Cause: ZMK v0.3 runs display updates on the system work queue (`CONFIG_ZMK_DISPLAY_WORK_QUEUE_SYSTEM`), the same queue `kscan_gpio_matrix.c` scans the keys on, and the OLED bus ran at 100 kHz (~46 ms per full frame). The new animations (the layer slide on every layer key) kept that queue busy, so presses were missed. Fix on the left only: `CONFIG_ZMK_DISPLAY_WORK_QUEUE_DEDICATED=y` (priority 5, stack 3072) and the I2C bus at 400 kHz. The right half's bus is left alone. Confirmed on the keyboard by the user.
