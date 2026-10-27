@@ -69,6 +69,11 @@
             key-positions = <52 55>;
             bindings = <&mo 10>;
         };
+        combo_komorebi{
+            timeout-ms = <50>;
+            key-positions = <54 55>;
+            bindings = <&mo 11>;
+        };
         combo_invertKeys_right {
             timeout-ms = <50>;
             key-positions = <57 59>;
@@ -215,10 +220,22 @@
 	&trans	&kp HOME	&kp PAGE_DOWN	&kp PAGE_UP	&kp END	&trans	&kp GRAVE	&kp LC(W)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&trans
 	&trans	&kp LEFT_ARROW	&kp DOWN_ARROW	&kp UP_ARROW	&kp RIGHT_ARROW	&trans	&kp LALT	&kp LSHIFT	&kp LCTRL	&kp BSPC	&kp DEL	&trans
 	&trans	&trans	&trans	&trans	&trans	&trans	&kp LC(Z)	&mkp MB1	&mkp MB3	&mkp MB2	&kp SPACE	&trans
-			&trans	&trans	&trans	&trans		&trans	&trans	&trans		
+			&trans	&trans	&trans	&trans		&trans	&trans	&trans
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
-            >;												
-                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;												
-            };												
+            >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
+            komorebi_layer {
+                display-name = "KOMOREBI";
+                bindings = <
+	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+			&trans	&trans	&trans	&trans		&trans	&trans	&trans
+		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
+            >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
     };												
 };												

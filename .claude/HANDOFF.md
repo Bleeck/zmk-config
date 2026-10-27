@@ -14,7 +14,7 @@ Every keymap or config change only needs the **left** half reflashed. The right 
 ## Files
 
 All under `config/boards/shields/bleeckeys/`:
-- `bleeckeys.keymap`: 11 layers. Combos are near the top; each layer's knob action is in its `sensor-bindings`.
+- `bleeckeys.keymap`: 12 layers. Layer 11 KOMOREBI (combo 54 + 55, Sym L + big left thumb key) is empty for now, meant for komorebi shortcuts. Combos are near the top; each layer's knob action is in its `sensor-bindings`.
 - `bleeckeys.dtsi`: matrix transform, encoder (`steps = <60>`, `triggers-per-rotation = <30>`), OLED, battery.
 - `bleeckeys_left.conf`, `bleeckeys_left.overlay`: display settings and the trackpad input processors (swipe on SYM layers 4/5, tap/drag).
 - `status_screen.c`: the OLED status screen. It shows BT profile, both batteries ("--" while the right half is not connected) and the layer name. It also handles the layer-name slide, BT wipe and blink, the volume line, the low-battery blink and the Caps Lock inversion.
@@ -50,9 +50,9 @@ If Docker Desktop fails to start with "sailor-ingest.sock ... cannot be accessed
 https://claude.ai/artifact/XNRfJsaZ8XsJEo8GsaPtDc: a private page that draws both halves and shows each layer, how to reach it, and what each key does.
 - **Local copy:** `docs/bleeckeys-layers.html` is the same page, made standalone. Open it in any browser, no internet needed except for the fonts.
 - **Data:** it carries its own copy of the keymap (the `LAYERS` array, extracted from `bleeckeys.keymap`). After a keymap change, update both the local file and the published page.
-- **Thumb clusters**, as the user described them:
-  - left: big key = CAPS MOD; middle row Sym L, Sym R; bottom row Fn L (the FN keycap), Fn R.
-  - right: big key = Space; middle row Sym L, Sym R; bottom row Fn L, Fn R (the FN keycap).
+- **Thumb clusters** (positions corrected by the user on 2026-10-27; the page had 52/54, 51/53, 57/59, 58/60 swapped):
+  - left: big key 55 = CAPS MOD; middle row 52 Sym R (outer), 54 Sym L; bottom row 51 Fn R (outer), 53 Fn L.
+  - right: big key 56 = Space; middle row 57 Sym R, 59 Sym L; bottom row 58 Fn R, 60 Fn L.
 
 ## Open / not checked
 
