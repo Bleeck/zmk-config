@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>bleecKEYS Layers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&family=VT323&display=swap">
+<style>
+/* Layout: layer strip on top, the keyboard drawn as it sits on the desk, then "how to reach" and the selected key side by side. */
+:root {
+  --bg: #eceff4;
+  --fg: #18202e;
+  --muted: #5b6880;
+  --panel: #ffffff;
+  --line: #d2d9e4;
+  --accent: #0a8299;
+  --accent-soft: rgba(10,130,153,.12);
+  --chip: #ffffff;
+  --chip-on: #18202e;
+  --chip-on-fg: #ffffff;
+  /* the board looks the same in both themes: blue printed case, black caps, cyan OLED */
+  --case: #4d6287;
+  --case-edge: #3b4d6d;
+  --case-shade: #44587b;
+  --cap: #121418;
+  --cap-top: #23262c;
+  --cap-edge: #08090b;
+  --legend: #f1f3f7;
+  --legend-dim: rgba(241,243,247,.30);
+  --oled: #39e2f3;
+  --k-layer: #57e4f3;
+  --k-bt: #9db9ff;
+  --k-mouse: #f4c76b;
+  --k-sys: #ff8f80;
+  --k-mod: #a9b9d2;
+  --hl: #57e4f3;
+  --font-display: "Chakra Petch", "Bahnschrift", "Segoe UI", sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --font-oled: "VT323", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151d; --fg: #e6eaf2; --muted: #93a0b7; --panel: #181e29; --line: #2a3344;
+    --accent: #57e4f3; --accent-soft: rgba(87,228,243,.12);
+    --chip: #181e29; --chip-on: #57e4f3; --chip-on-fg: #0d1117;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11151d; --fg: #e6eaf2; --muted: #93a0b7; --panel: #181e29; --line: #2a3344;
+  --accent: #57e4f3; --accent-soft: rgba(87,228,243,.12);
+  --chip: #181e29; --chip-on: #57e4f3; --chip-on-fg: #0d1117;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+}
+.wrap {
+  max-width: 1180px; margin: 0 auto;
+  padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 20px;
+}
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: .01em; margin: 0; line-height: 1.1; text-wrap: balance; }
+h1 span { color: var(--accent); }
+.hint { color: var(--muted); font-size: 13px; margin: 0; }
+kbd { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--panel); }
+
+.layers { display: flex; flex-wrap: wrap; gap: 8px; }
+.layer-btn {
+  font-family: var(--font-display); font-weight: 600; font-size: 14px; letter-spacing: .04em;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 12px 7px 8px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--chip); color: var(--fg);
+}
+.layer-btn .n { font-family: var(--font-mono); font-size: 11px; font-weight: 600; min-width: 20px; text-align: center; padding: 1px 4px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+.layer-btn:hover { border-color: var(--accent); }
+.layer-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* the browser's own focus ring is drawn in drawing units and comes out huge, so keys show focus on the cap instead */
+.board .key, .board .key:focus { outline: none; }
+.key:focus-visible .top { stroke: var(--hl); stroke-width: .07; }
+.knob:focus-visible .knob-body { stroke: var(--hl); }
+.layer-btn[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-fg); border-color: var(--chip-on); }
+.layer-btn[aria-pressed="true"] .n { background: rgba(255,255,255,.18); color: inherit; }
+
+.board-frame { overflow-x: auto; border-radius: 14px; background: var(--case-edge); }
+.board { display: block; width: 100%; min-width: 720px; height: auto; }
+.board text { font-family: var(--font-body); font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.half { fill: var(--case); stroke: var(--case-shade); stroke-width: .04; }
+.key { cursor: pointer; }
+.key .skirt { fill: var(--cap-edge); }
+.key .top { fill: var(--cap-top); stroke: var(--cap); stroke-width: .03; }
+.key:hover .top { fill: #2e323a; }
+.key .main { fill: var(--legend); }
+.key .small { fill: var(--k-mod); font-weight: 400; }
+.key.trans .main, .key.trans .small { fill: var(--legend-dim); }
+.key.kind-layer .main { fill: var(--k-layer); }
+.key.kind-bt .main { fill: var(--k-bt); }
+.key.kind-mouse .main { fill: var(--k-mouse); }
+.key.kind-sys .main { fill: var(--k-sys); }
+.key.kind-macro .main { fill: var(--k-layer); }
+.key .ring { fill: none; stroke: var(--hl); stroke-width: .06; opacity: 0; }
+.key.act .ring { opacity: 1; }
+.key.act.combo .ring { stroke-dasharray: .14 .09; }
+.key.sel .top { stroke: var(--legend); stroke-width: .05; }
+.knob-body { fill: #0c0d10; stroke: #8d939d; stroke-width: .05; }
+.knob-mark { stroke: #e9ecf1; stroke-width: .05; stroke-linecap: round; }
+.pad { fill: #0d0f13; stroke: var(--case-shade); stroke-width: .05; }
+.pad-text { fill: var(--legend-dim); font-weight: 400 !important; }
+.pad.swipe { stroke: var(--hl); stroke-width: .06; }
+.pad-text.swipe { fill: var(--k-layer); }
+.oled { fill: #050607; stroke: #1c1f25; stroke-width: .04; }
+.oled-text { font-family: var(--font-oled) !important; font-weight: 400 !important; fill: var(--oled); text-anchor: start !important; }
+.combo-line { stroke: var(--hl); stroke-width: .05; stroke-dasharray: .12 .08; fill: none; opacity: .85; }
+
+.below { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 760px) { .below { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+.panel h2 { font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.panel h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin: 0 0 6px; line-height: 1.2; }
+.panel p { margin: 0 0 10px; max-width: 62ch; }
+.ways { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 8px; }
+.ways li { display: flex; gap: 10px; align-items: baseline; }
+.tag { flex: none; font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 1px 7px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); }
+.tag.combo { border-style: dashed; }
+.notes { color: var(--muted); font-size: 14px; }
+.notes p { margin: 0 0 6px; }
+code { font-family: var(--font-mono); font-size: 13px; background: var(--accent-soft); padding: 1px 6px; border-radius: 4px; word-break: break-word; }
+.kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; margin: 8px 0 14px; font-size: 14px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; min-width: 0; }
+.others { display: flex; flex-wrap: wrap; gap: 6px; }
+.other { font-size: 13px; border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; cursor: pointer; background: transparent; color: var(--fg); font-family: var(--font-body); }
+.other b { font-family: var(--font-display); font-weight: 600; font-size: 11px; letter-spacing: .05em; color: var(--muted); margin-right: 5px; }
+.other:hover { border-color: var(--accent); }
+.legend-row { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend-row span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; background: var(--cap-top); border: 2px solid var(--cap-top); }
+@media (prefers-reduced-motion: no-preference) { .key .top, .key .ring { transition: fill .12s, opacity .15s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>blee<span>c</span>KEYS layers</h1>
+    <p class="hint">Keys <kbd>0</kbd>–<kbd>9</kbd> and <kbd>←</kbd> <kbd>→</kbd> switch layers. Click a key for what it does on every layer.</p>
+  </header>
+
+  <nav class="layers" id="layers" aria-label="Layers"></nav>
+
+  <div class="board-frame"><svg class="board" id="board" role="img" aria-label="Keyboard"></svg></div>
+
+  <div class="legend-row" aria-hidden="true">
+    <span><i class="sw" style="border-color:var(--hl)"></i>held to reach this layer</span>
+    <span><i class="sw" style="border-color:var(--hl);border-style:dashed"></i>pressed together (combo)</span>
+    <span><i class="sw" style="background:var(--legend-dim)"></i>dim legend: falls through to BASE</span>
+    <span style="color:var(--fg)"><i class="sw" style="background:var(--k-layer)"></i>layer</span>
+    <span style="color:var(--fg)"><i class="sw" style="background:var(--k-bt)"></i>Bluetooth</span>
+    <span style="color:var(--fg)"><i class="sw" style="background:var(--k-mouse)"></i>mouse</span>
+  </div>
+
+  <div class="below">
+    <section class="panel" id="reach" aria-live="polite"></section>
+    <section class="panel" id="detail" aria-live="polite"></section>
+  </div>
+</div>
+
+<script>
+const LAYERS = [{"id":"default_layer","name":"BASE","b":["&kp ESC","&base_layer_macro","&nav_arrows_layer_macro","&nav_layer_macro","&mkp MB2","&kp CAPSLOCK","&kp BSPC","&kp DEL","&kp TAB","&kp Q","&kp W","&kp E","&kp R","&kp T","&kp Y","&kp U","&kp I","&kp O","&kp P","&kp TAB","&kp LSHIFT","&kp A","&kp S","&kp D","&kp F","&kp G","&kp H","&kp J","&kp K","&kp L","&kp SEMI","&kp RSHIFT","&kp LCTRL","&kp Z","&kp X","&kp C","&kp V","&kp B","&kp N","&kp M","&kp COMMA","&kp DOT","&kp SINGLE_QUOTE","&kp RCTRL","&kp LGUI","&kp LALT","&kp RET","&kp C_MUTE","&kp RET","&kp RALT","&kp RGUI","&mo 7","&mo 5","&mo 6","&mo 4","&mo 1","&kp SPACE","&mo 5","&mo 7","&mo 4","&mo 6"]},{"id":"capsmod_layer","name":"CAPS MOD","b":["&trans","&bt BT_SEL 0","&bt BT_SEL 1","&bt BT_SEL 2","&trans","&trans","&trans","&trans","&kp LA(TAB)","&kp GRAVE","&kp LC(W)","&kp LC(X)","&kp LC(C)","&kp LC(V)","&kp HOME","&kp PAGE_DOWN","&kp PAGE_UP","&kp END","&trans","&trans","&trans","&trans","&kp RET","&kp ESC","&kp BSPC","&kp DEL","&kp LEFT_ARROW","&kp DOWN_ARROW","&kp UP_ARROW","&kp RIGHT_ARROW","&trans","&trans","&trans","&left_double_click_macro","&mkp MB1","&mkp MB3","&mkp MB2","&kp SPACE","&kp BSPC","&kp DEL","&kp LESS_THAN","&kp GREATER_THAN","&kp K_CONTEXT_MENU","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"navigation_layer","name":"NAV","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SPACE","&trans","&trans","&trans","&trans","&trans"]},{"id":"nav_arrow_layer","name":"NAV ARROW","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp UP_ARROW","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp LEFT_ARROW","&kp DOWN_ARROW","&kp RIGHT_ARROW","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SPACE","&trans","&trans","&trans","&trans","&trans"]},{"id":"symbol_left_layer","name":"SYM LEFT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SLASH","&kp NUMBER_7","&kp NUMBER_8","&kp NUMBER_9","&kp MINUS","&trans","&trans","&kp LEFT_PARENTHESIS","&kp RIGHT_PARENTHESIS","&kp LEFT_BRACKET","&kp RIGHT_BRACKET","&kp SEMI","&kp BACKSLASH","&kp NUMBER_4","&kp NUMBER_5","&kp NUMBER_6","&kp EQUAL","&trans","&trans","&trans","&trans","&kp LEFT_BRACE","&kp RIGHT_BRACE","&kp SINGLE_QUOTE","&kp BSPC","&kp NUMBER_1","&kp NUMBER_2","&kp NUMBER_3","&kp NUMBER_0","&trans","&trans","&trans","&trans","&trans","&kp DOT","&trans","&kp COMMA","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"symbol_right_layer","name":"SYM RIGHT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SLASH","&kp NUMBER_7","&kp NUMBER_8","&kp NUMBER_9","&kp MINUS","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp BACKSLASH","&kp NUMBER_4","&kp NUMBER_5","&kp NUMBER_6","&kp EQUAL","&kp LEFT_PARENTHESIS","&kp RIGHT_PARENTHESIS","&kp LEFT_BRACKET","&kp RIGHT_BRACKET","&kp SEMI","&trans","&trans","&kp BSPC","&kp NUMBER_1","&kp NUMBER_2","&kp NUMBER_3","&kp NUMBER_0","&trans","&trans","&kp LEFT_BRACE","&kp RIGHT_BRACE","&kp SINGLE_QUOTE","&trans","&kp COMMA","&trans","&kp DOT","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"func_left_layer","name":"FUNC LEFT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp F19","&kp F20","&kp F21","&kp F24","&trans","&kp LC(LA(DEL))","&kp F7","&kp F8","&kp F9","&kp F12","&trans","&trans","&kp F16","&kp F17","&kp F18","&kp F23","&trans","&kp LA(F4)","&kp F4","&kp F5","&kp F6","&kp F11","&trans","&trans","&kp F13","&kp F14","&kp F15","&kp F22","&kp LC(LA(GRAVE))","&kp LC(LS(ESC))","&kp F1","&kp F2","&kp F3","&kp F10","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"func_right_layer","name":"FUNC RIGHT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp LC(LA(DEL))","&kp F7","&kp F8","&kp F9","&kp F12","&kp F19","&kp F20","&kp F21","&kp F24","&trans","&trans","&trans","&kp LA(F4)","&kp F4","&kp F5","&kp F6","&kp F11","&kp F16","&kp F17","&kp F18","&kp F23","&trans","&trans","&trans","&kp LC(LS(ESC))","&kp F1","&kp F2","&kp F3","&kp F10","&kp F13","&kp F14","&kp F15","&kp F22","&kp LC(LA(GRAVE))","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"bt_layer","name":"BT","b":["&tog 8","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bt BT_SEL 0","&bt BT_SEL 1","&bt BT_SEL 2","&bt BT_SEL 3","&bt BT_SEL 4","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bt BT_DISC 0","&bt BT_DISC 1","&bt BT_DISC 2","&bt BT_DISC 3","&bt BT_DISC 4","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bt BT_CLR","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bootloader","&trans","&out OUT_TOG","&trans","&trans","&bootloader","&trans","&trans"]},{"id":"invert_layer","name":"INVERT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp Y","&kp U","&kp I","&kp O","&kp P","&kp Q","&kp W","&kp E","&kp R","&kp T","&trans","&trans","&kp H","&kp J","&kp K","&kp L","&kp SEMI","&kp A","&kp S","&kp D","&kp F","&kp G","&trans","&trans","&kp N","&kp M","&kp COMMA","&kp DOT","&kp SINGLE_QUOTE","&kp Z","&kp X","&kp C","&kp V","&kp B","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"caps_mod_inverted","name":"CAPS M INV","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp HOME","&kp PAGE_DOWN","&kp PAGE_UP","&kp END","&trans","&kp GRAVE","&kp LC(W)","&kp LC(X)","&kp LC(C)","&kp LC(V)","&trans","&trans","&kp LEFT_ARROW","&kp DOWN_ARROW","&kp UP_ARROW","&kp RIGHT_ARROW","&trans","&kp LALT","&kp LSHIFT","&kp LCTRL","&kp BSPC","&kp DEL","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp LC(Z)","&mkp MB1","&mkp MB3","&mkp MB2","&kp SPACE","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]}];
+
+const SHORT = ['BASE','Caps mod','NAV','Nav arr','Sym L','Sym R','Fn L','Fn R','BT','INVERT','Caps M inv'];
+const HASH = ['base','capsmod','nav','navarrow','symleft','symright','funcleft','funcright','bt','invert','capsminv'];
+
+// How each layer is reached: positions to ring, and the text for the panel.
+const REACH = [
+  { ways: [['switch', [1], 'Press CODE to come back here from NAV or NAV ARROW (it also sends F23).']],
+    notes: ['The default layer. Pressing the knob mutes.', 'Trackpad: tap to click, double tap for a double click, tap then hold to drag.'] },
+  { ways: [['hold', [55], 'Hold the big left thumb key.'], ['combo', [56, 59], 'Or on the right: Space + Sym L together.']],
+    notes: ['Arrows on the right home row, Home / PgDn / PgUp / End above them, editing shortcuts on the left.', 'The ● ■ keys pick Bluetooth profiles 1–3.'] },
+  { ways: [['switch', [3], 'Press ■ to switch here; it stays until you press CODE. Sends F24 on the way in.']],
+    notes: ['Everything falls through to BASE except the big left thumb key, which becomes Space.'] },
+  { ways: [['switch', [2], 'Press ● to switch here; it stays until you press CODE. Sends F24 on the way in.']],
+    notes: ['W A S D become arrows; the big left thumb key becomes Space.'] },
+  { ways: [['hold', [54, 59], 'Hold Sym L, on either thumb cluster.']],
+    notes: ['Numbers and math on the right hand, brackets on the left.', 'Trackpad: a swipe sends Win + arrow in its direction, once per touch (Shift held adds Shift).'] },
+  { ways: [['hold', [52, 57], 'Hold Sym R, on either thumb cluster.']],
+    notes: ['Numbers and math on the left hand, brackets on the right.', 'Trackpad: a swipe sends Win + arrow in its direction, once per touch (Shift held adds Shift).'] },
+  { ways: [['hold', [53, 60], 'Hold Fn L, on either thumb cluster.']],
+    notes: ['F1–F12 on the right hand, F13–F24 on the left. Alt+F4, Ctrl+Alt+Del and Task Manager on the inner column.'] },
+  { ways: [['hold', [51, 58], 'Hold Fn R, on either thumb cluster.']],
+    notes: ['F1–F12 on the left hand, F13–F24 on the right.'] },
+  { ways: [['combo', [1, 2, 3], 'Tap CODE + ● + ■ together to toggle it on.'], ['combo', [4, 5, 6], 'Or the right top row 0 + 1 + 2.']],
+    notes: ['Esc toggles it off again.', 'Top row: pick profile 1–5. Home row: disconnect that profile. Z: clear the current bond.', 'The Fn L thumb (left) and Fn R thumb (right) reboot that half into flash mode; the big left thumb switches USB / Bluetooth.'] },
+  { ways: [['combo', [52, 54], 'Sym R + Sym L together on the left cluster.'], ['combo', [57, 59], 'Or Sym R + Sym L on the right cluster.']],
+    notes: ['The letters swap hands: the left hand types the right half and the other way round.'] },
+  { ways: [['combo', [52, 55], 'Sym R + the big left thumb key together.']],
+    notes: ['CAPS MOD mirrored: arrows and Home / End on the left hand, modifiers and mouse buttons on the right.'] },
+];
+
+const KEYS = {
+  ESC:'Esc', TAB:'Tab', LSHIFT:'Shift', RSHIFT:'Shift', LCTRL:'Ctrl', RCTRL:'Ctrl', LGUI:'Win', RGUI:'Win',
+  LALT:'Alt', RALT:'Alt', RET:'Enter', SPACE:'Space', BSPC:'Bksp', DEL:'Del', CAPSLOCK:'Caps',
+  SEMI:';', SINGLE_QUOTE:"'", COMMA:',', DOT:'.', SLASH:'/', BACKSLASH:'\\', MINUS:'-', EQUAL:'=', GRAVE:'`',
+  LEFT_PARENTHESIS:'(', RIGHT_PARENTHESIS:')', LEFT_BRACKET:'[', RIGHT_BRACKET:']', LEFT_BRACE:'{', RIGHT_BRACE:'}',
+  LESS_THAN:'<', GREATER_THAN:'>', HOME:'Home', END:'End', PAGE_UP:'PgUp', PAGE_DOWN:'PgDn',
+  LEFT_ARROW:'←', RIGHT_ARROW:'→', UP_ARROW:'↑', DOWN_ARROW:'↓', LEFT:'←', RIGHT:'→', UP:'↑', DOWN:'↓',
+  K_CONTEXT_MENU:'Menu', C_MUTE:'Mute', C_VOL_UP:'Vol +', C_VOL_DN:'Vol −',
+};
+const MODS = { LC:'Ctrl', RC:'Ctrl', LA:'Alt', RA:'Alt', LS:'Shift', RS:'Shift', LG:'Win', RG:'Win' };
+const MEANING = {
+  'LC(W)':'Close tab', 'LC(X)':'Cut', 'LC(C)':'Copy', 'LC(V)':'Paste', 'LC(Z)':'Undo',
+  'LA(TAB)':'Switch window', 'LC(LA(DEL))':'Security screen', 'LA(F4)':'Close window', 'LC(LS(ESC))':'Task Manager',
+  BSPC:'Backspace', RET:'Enter', K_CONTEXT_MENU:'Context menu', C_MUTE:'Mute',
+};
+const BT_SEL = n => `Bluetooth profile ${n + 1}`;
+
+function keyName(code) {
+  if (KEYS[code]) return KEYS[code];
+  let m = code.match(/^NUMBER_(\d)$/); if (m) return m[1];
+  return code;
+}
+
+function parseKp(arg) {
+  const mods = [];
+  let s = arg;
+  let m;
+  while ((m = s.match(/^([LR][CASG])\((.*)\)$/))) { mods.push(MODS[m[1]]); s = m[2]; }
+  return { mods, key: keyName(s), code: arg };
+}
+
+// Turns one binding into keycap text: main legend, a small line above (modifiers) or below (what kind).
+function label(binding) {
+  const [beh, ...args] = binding.split(' ');
+  const a = args.join(' ');
+  switch (beh) {
+    case '&kp': {
+      const p = parseKp(a);
+      return { main: p.key, top: p.mods.join('+'), kind: 'key', meaning: MEANING[a] || (p.mods.length ? p.mods.concat(p.key).join(' + ') : null) };
+    }
+    case '&mo': return { main: SHORT[+a], bottom: 'hold', kind: 'layer', layer: +a, meaning: `Hold for ${LAYERS[+a].name}` };
+    case '&tog': return { main: SHORT[+a], bottom: 'toggle', kind: 'layer', layer: +a, meaning: `Toggle ${LAYERS[+a].name} on / off` };
+    case '&to': return { main: SHORT[+a], bottom: 'switch', kind: 'layer', layer: +a, meaning: `Switch to ${LAYERS[+a].name}` };
+    case '&mkp': return { main: { MB1:'L click', MB2:'R click', MB3:'M click' }[a] || a, kind: 'mouse', meaning: { MB1:'Left mouse button', MB2:'Right mouse button', MB3:'Middle mouse button' }[a] };
+    case '&left_double_click_macro': return { main: 'Dbl click', kind: 'mouse', meaning: 'Double left click' };
+    case '&base_layer_macro': return { main: 'BASE', bottom: 'F23 · go', kind: 'macro', layer: 0, meaning: 'Sends F23, then switches to BASE' };
+    case '&nav_layer_macro': return { main: 'NAV', bottom: 'F24 · go', kind: 'macro', layer: 2, meaning: 'Sends F24, then switches to NAV' };
+    case '&nav_arrows_layer_macro': return { main: 'Nav arr', bottom: 'F24 · go', kind: 'macro', layer: 3, meaning: 'Sends F24, then switches to NAV ARROW' };
+    case '&bt': {
+      const [cmd, n] = a.split(' ');
+      if (cmd === 'BT_SEL') return { main: `BT ${+n + 1}`, bottom: 'select', kind: 'bt', meaning: `Use ${BT_SEL(+n)}` };
+      if (cmd === 'BT_DISC') return { main: `BT ${+n + 1}`, bottom: 'disconnect', kind: 'bt', meaning: `Disconnect ${BT_SEL(+n)}` };
+      if (cmd === 'BT_CLR') return { main: 'Clear', bottom: 'BT bond', kind: 'bt', meaning: 'Forget the host paired on the current profile' };
+      return { main: cmd, kind: 'bt' };
+    }
+    case '&out': return { main: 'USB/BT', bottom: 'output', kind: 'bt', meaning: 'Switch output between USB and Bluetooth' };
+    case '&bootloader': return { main: 'Boot', bottom: 'flash', kind: 'sys', meaning: 'Reboot this half into flash mode' };
+    case '&trans': return { trans: true };
+    case '&none': return { main: '', kind: 'key', meaning: 'Does nothing' };
+    default: return { main: beh.replace('&', ''), kind: 'key' };
+  }
+}
+
+function resolve(layer, pos) {
+  const l = label(LAYERS[layer].b[pos]);
+  if (!l.trans) return l;
+  return Object.assign({}, label(LAYERS[0].b[pos]), { trans: true });
+}
+
+/* ---------- geometry, in key units (1u = one key pitch) ---------- */
+const GAP = 4.3;                         // space between the halves
+const OFF_L = [0.5, 0.5, 0, 0, 0.05, 0.1];  // column stagger, left half; the right mirrors it
+const colX = c => c < 6 ? c : c + GAP;
+const colOff = c => c < 6 ? OFF_L[c] : OFF_L[11 - c];
+const KEYPOS = [];
+function grid(pos, col, row) { KEYPOS[pos] = { cx: colX(col) + .5, cy: row + colOff(col) + .5, w: 1, h: 1, rot: 0 }; }
+[0, 1, 2, 3].forEach((c, i) => grid(i, c, 0));
+[8, 9, 10, 11].forEach((c, i) => grid(4 + i, c, 0));
+for (let r = 1; r <= 3; r++) for (let c = 0; c < 12; c++) grid(8 + (r - 1) * 12 + c, c, r);
+[2, 3, 4].forEach((c, i) => grid(44 + i, c, 4));
+[7, 8, 9].forEach((c, i) => grid(48 + i, c, 4));
+const KNOB = { pos: 47, cx: 6.65, cy: 3.25, r: .46 };
+const PAD = { cx: colX(6) + 1.05, cy: -.35, r: .95 };
+const OLED = { x: 4.05, y: -.55, w: 2.3, h: .7 };
+
+// Thumb clusters: big key on top, two rows of two below, the whole cluster turned.
+function cluster(keys, rot, bigPos, bigAt) {
+  const t = rot * Math.PI / 180, cos = Math.cos(t), sin = Math.sin(t);
+  const R = (x, y) => [x * cos - y * sin, x * sin + y * cos];
+  const center = k => [k[1] + k[3] / 2, k[2] + k[4] / 2];
+  const big = keys.find(k => k[0] === bigPos);
+  const [bx, by] = R(...center(big));
+  const ox = bigAt[0] - bx, oy = bigAt[1] - by;
+  for (const k of keys) {
+    const [x, y] = R(...center(k));
+    KEYPOS[k[0]] = { cx: ox + x, cy: oy + y, w: k[3], h: k[4], rot };
+  }
+}
+//              pos   x    y    w    h
+cluster([[55, .3, 0, 1.7, 1], [54, 0, 1.1, 1, 1], [52, 1, 1.1, 1, 1], [53, 0, 2.1, 1, 1], [51, 1, 2.1, 1, 1]], -20, 55, [6.75, 5.65]);
+cluster([[56, .3, 0, 1.7, 1], [59, 0, 1.1, 1, 1], [57, 1, 1.1, 1, 1], [60, 0, 2.1, 1, 1], [58, 1, 2.1, 1, 1]], 16, 56, [colX(7) - .6, 5.6]);
+
+/* ---------- drawing ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('board');
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+
+// Case outline per half: the hull of its keys, padded.
+function hull(points) {
+  points = points.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const cross = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+  const lower = [], upper = [];
+  for (const p of points) { while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0) lower.pop(); lower.push(p); }
+  for (const p of points.slice().reverse()) { while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0) upper.pop(); upper.push(p); }
+  return lower.slice(0, -1).concat(upper.slice(0, -1));
+}
+function corners(k, pad) {
+  const t = k.rot * Math.PI / 180, cos = Math.cos(t), sin = Math.sin(t);
+  const hw = k.w / 2 + pad, hh = k.h / 2 + pad;
+  return [[-hw, -hh], [hw, -hh], [hw, hh], [-hw, hh]].map(([x, y]) => [k.cx + x * cos - y * sin, k.cy + x * sin + y * cos]);
+}
+function circlePts(c, r) { const out = []; for (let i = 0; i < 16; i++) { const a = i / 16 * 2 * Math.PI; out.push([c.cx + r * Math.cos(a), c.cy + r * Math.sin(a)]); } return out; }
+
+const LEFT = p => (p <= 3) || (p >= 8 && p < 44 && ((p - 8) % 12) < 6) || (p >= 44 && p <= 47) || (p >= 51 && p <= 55);
+const keyEls = [];
+let combosG;
+
+function build() {
+  const allPts = [];
+  const halves = [[], []];
+  KEYPOS.forEach((k, p) => { if (k && p !== KNOB.pos) halves[LEFT(p) ? 0 : 1].push(...corners(k, .28)); });
+  halves[0].push(...circlePts(KNOB, KNOB.r + .3), [OLED.x - .2, OLED.y - .25], [OLED.x + OLED.w + .25, OLED.y - .25], [OLED.x + OLED.w + .25, OLED.y + OLED.h + .2]);
+  halves[1].push(...circlePts(PAD, PAD.r + .25));
+  halves.forEach(pts => { allPts.push(...pts); el('polygon', { class: 'half', points: hull(pts).map(p => p.map(v => v.toFixed(3)).join(',')).join(' '), 'stroke-linejoin': 'round' }, svg); });
+
+  const xs = allPts.map(p => p[0]), ys = allPts.map(p => p[1]);
+  const m = .45, x0 = Math.min(...xs) - m, y0 = Math.min(...ys) - m;
+  svg.setAttribute('viewBox', `${x0.toFixed(2)} ${y0.toFixed(2)} ${(Math.max(...xs) - x0 + m).toFixed(2)} ${(Math.max(...ys) - y0 + m).toFixed(2)}`);
+
+  // OLED, trackpad
+  el('rect', { class: 'oled', x: OLED.x, y: OLED.y, width: OLED.w, height: OLED.h, rx: .06 }, svg);
+  const o1 = el('text', { class: 'oled-text', x: OLED.x + .12, y: OLED.y + .2, 'font-size': .3 }, svg); o1.textContent = 'ᛒ 1';
+  const o3 = el('text', { class: 'oled-text', x: OLED.x + 1.35, y: OLED.y + .2, 'font-size': .3, opacity: .55 }, svg); o3.textContent = 'L%  R%';
+  const o2 = el('text', { class: 'oled-text', id: 'oledLayer', x: OLED.x + .12, y: OLED.y + .5, 'font-size': .3 }, svg);
+  el('circle', { class: 'pad', id: 'pad', cx: PAD.cx, cy: PAD.cy, r: PAD.r }, svg);
+  const pt = el('text', { class: 'pad-text', id: 'padText', x: PAD.cx, y: PAD.cy, 'font-size': .2 }, svg);
+
+  combosG = el('g', {}, svg);
+
+  KEYPOS.forEach((k, p) => {
+    if (!k || p === KNOB.pos) return;
+    const g = el('g', { class: 'key', transform: `translate(${k.cx.toFixed(3)} ${k.cy.toFixed(3)}) rotate(${k.rot})`, tabindex: 0, role: 'button', 'data-pos': p }, svg);
+    const w = k.w, h = k.h;
+    el('rect', { class: 'skirt', x: -w / 2 + .05, y: -h / 2 + .05, width: w - .1, height: h - .1, rx: .13 }, g);
+    el('rect', { class: 'top', x: -w / 2 + .12, y: -h / 2 + .09, width: w - .24, height: h - .27, rx: .1 }, g);
+    el('rect', { class: 'ring', x: -w / 2 + .02, y: -h / 2 + .02, width: w - .04, height: h - .04, rx: .15 }, g);
+    el('text', { class: 'small top-t', y: -.25, 'font-size': .13 }, g);
+    el('text', { class: 'main', y: -.04, 'font-size': .26 }, g);
+    el('text', { class: 'small bot-t', y: .2, 'font-size': .12 }, g);
+    keyEls[p] = g;
+  });
+
+  // knob: its press is position 47
+  const kg = el('g', { class: 'key knob', transform: `translate(${KNOB.cx} ${KNOB.cy})`, tabindex: 0, role: 'button', 'data-pos': KNOB.pos }, svg);
+  el('circle', { class: 'ring', r: KNOB.r + .07 }, kg);
+  el('circle', { class: 'knob-body', r: KNOB.r }, kg);
+  el('line', { class: 'knob-mark', x1: .12, y1: -.3, x2: .2, y2: -.4 }, kg);
+  el('text', { class: 'main', y: .02, 'font-size': .17 }, kg);
+  el('text', { class: 'small bot-t', y: .22, 'font-size': .1 }, kg);
+  keyEls[KNOB.pos] = kg;
+}
+
+/* ---------- state ---------- */
+let layer = 0, selected = 1;
+
+function setText(g, cls, txt) { const t = g.querySelector(cls); if (t) t.textContent = txt || ''; }
+
+function render() {
+  const reach = REACH[layer];
+  const act = new Map();
+  reach.ways.forEach(([type, ps]) => ps.forEach(p => act.set(p, type)));
+
+  keyEls.forEach((g, p) => {
+    if (!g) return;
+    const l = resolve(layer, p);
+    const isKnob = p === KNOB.pos;
+    g.setAttribute('class', ['key', isKnob ? 'knob' : '', 'kind-' + (l.kind || 'key'), l.trans ? 'trans' : '', act.has(p) ? 'act' : '', act.get(p) === 'combo' ? 'combo' : '', p === selected ? 'sel' : ''].join(' '));
+    const main = isKnob ? ((layer === 1 || layer === 5) ? 'Tabs' : 'Vol') : l.main;
+    const k = KEYPOS[p];
+    const len = [...(main || '')].length;
+    const t = g.querySelector('.main');
+    t.textContent = main || '';
+    if (!isKnob) {
+      const fit = Math.min(.26, (k.w - .3) / Math.max(1, len * .58));
+      t.setAttribute('font-size', Math.max(.13, fit).toFixed(3));
+      t.setAttribute('y', l.top ? .03 : l.bottom ? -.06 : -.02);
+      setText(g, '.top-t', l.top);
+      setText(g, '.bot-t', l.bottom);
+    } else {
+      setText(g, '.bot-t', 'press: ' + (l.main || ''));
+    }
+    g.setAttribute('aria-label', `Key ${p}: ${l.meaning || l.main}${l.trans ? ' (from BASE)' : ''}`);
+  });
+
+  // dashed links between keys pressed together
+  combosG.innerHTML = '';
+  reach.ways.filter(w => w[0] === 'combo').forEach(([, ps]) => {
+    const pts = ps.map(p => KEYPOS[p]);
+    for (let i = 1; i < pts.length; i++) el('line', { class: 'combo-line', x1: pts[i - 1].cx, y1: pts[i - 1].cy, x2: pts[i].cx, y2: pts[i].cy }, combosG);
+  });
+
+  document.getElementById('oledLayer').textContent = LAYERS[layer].name;
+  const swipe = layer === 4 || layer === 5;
+  document.getElementById('pad').setAttribute('class', 'pad' + (swipe ? ' swipe' : ''));
+  const pt = document.getElementById('padText');
+  pt.setAttribute('class', 'pad-text' + (swipe ? ' swipe' : ''));
+  pt.textContent = swipe ? 'swipe = Win + arrow' : 'trackpad';
+
+  document.querySelectorAll('.layer-btn').forEach((b, i) => b.setAttribute('aria-pressed', i === layer));
+
+  const r = document.getElementById('reach');
+  r.innerHTML = `<h2>Layer ${layer}</h2><h3>${esc(LAYERS[layer].name)}</h3>
+    <ul class="ways">${reach.ways.map(([type, , text]) => `<li><span class="tag ${type}">${type}</span><span>${esc(text)}</span></li>`).join('')}</ul>
+    <div class="notes">${reach.notes.map(n => `<p>${esc(n)}</p>`).join('')}<p>Knob: ${esc(knobText(layer))}.</p></div>`;
+  renderDetail();
+}
+
+// The knob's turn per layer: CAPS MOD and SYM RIGHT switch tabs, every other layer is volume.
+const knobText = i => (i === 1 || i === 5) ? 'clockwise Ctrl+Tab, counter-clockwise Ctrl+Shift+Tab (next / previous tab)' : 'volume up / down';
+
+function renderDetail() {
+  const p = selected;
+  const own = LAYERS[layer].b[p];
+  const l = resolve(layer, p);
+  const isKnob = p === KNOB.pos;
+  const title = isKnob ? 'Knob' : (l.top ? l.top + ' + ' : '') + (l.main || '(blank)');
+  const others = LAYERS.map((L, i) => ({ i, b: L.b[p], l: label(L.b[p]) }))
+    .filter(o => !o.l.trans && o.i !== layer)
+    .map(o => `<button class="other" data-layer="${o.i}"><b>${esc(LAYERS[o.i].name)}</b>${esc((o.l.top ? o.l.top + '+' : '') + (o.l.main || '—'))}</button>`).join('');
+  document.getElementById('detail').innerHTML = `<h2>Selected key</h2><h3>${esc(title)}</h3>
+    <p>${esc(l.meaning || (l.kind === 'key' ? 'Types ' + (l.main || '') : ''))}${l.trans ? ' — not set on this layer, so the BASE key comes through.' : ''}</p>
+    <dl class="kv"><dt>On ${esc(LAYERS[layer].name)}</dt><dd><code>${esc(own)}</code></dd>
+    ${l.trans ? `<dt>From BASE</dt><dd><code>${esc(LAYERS[0].b[p])}</code></dd>` : ''}
+    <dt>Position</dt><dd>${p}${isKnob ? ' (knob press). Turning it here: ' + esc(knobText(layer)) : ''}</dd></dl>
+    <h2>Set on other layers</h2><div class="others">${others || '<span class="notes">Only on BASE; every other layer passes it through.</span>'}</div>`;
+}
+
+function setLayer(i, keepKey) {
+  layer = (i + LAYERS.length) % LAYERS.length;
+  if (!keepKey) selected = REACH[layer].ways[0][1][0];
+  try { history.replaceState(null, '', '#' + HASH[layer]); } catch (e) {}
+  render();
+}
+
+/* ---------- wiring ---------- */
+const nav = document.getElementById('layers');
+LAYERS.forEach((L, i) => {
+  const b = document.createElement('button');
+  b.className = 'layer-btn'; b.type = 'button'; b.id = 'layer-' + HASH[i];
+  b.innerHTML = `<span class="n">${i}</span>${esc(L.name)}`;
+  b.addEventListener('click', () => setLayer(i));
+  nav.appendChild(b);
+});
+build();
+svg.addEventListener('click', e => { const g = e.target.closest('[data-pos]'); if (g) { selected = +g.dataset.pos; render(); } });
+svg.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.dataset && e.target.dataset.pos) { e.preventDefault(); selected = +e.target.dataset.pos; render(); } });
+document.getElementById('detail').addEventListener('click', e => { const b = e.target.closest('[data-layer]'); if (b) setLayer(+b.dataset.layer, true); });
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (/^[0-9]$/.test(e.key)) setLayer(+e.key);
+  else if (e.key === 'ArrowRight' && !e.target.closest('svg')) setLayer(layer + 1);
+  else if (e.key === 'ArrowLeft' && !e.target.closest('svg')) setLayer(layer - 1);
+});
+const start = HASH.indexOf((location.hash || '').slice(1));
+setLayer(start >= 0 ? start : 0);
+</script>
