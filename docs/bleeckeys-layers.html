@@ -34,6 +34,7 @@
   --k-bt: #9db9ff;
   --k-mouse: #f4c76b;
   --k-sys: #ff8f80;
+  --k-wm: #a8e88a;
   --k-mod: #a9b9d2;
   --hl: #57e4f3;
   --font-display: "Chakra Petch", "Bahnschrift", "Segoe UI", sans-serif;
@@ -104,6 +105,7 @@ kbd { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--li
 .key.kind-bt .main { fill: var(--k-bt); }
 .key.kind-mouse .main { fill: var(--k-mouse); }
 .key.kind-sys .main { fill: var(--k-sys); }
+.key.kind-wm .main { fill: var(--k-wm); }
 .key.kind-macro .main { fill: var(--k-layer); }
 .key .ring { fill: none; stroke: var(--hl); stroke-width: .06; opacity: 0; }
 .key.act .ring { opacity: 1; }
@@ -162,6 +164,7 @@ code { font-family: var(--font-mono); font-size: 13px; background: var(--accent-
     <span style="color:var(--fg)"><i class="sw" style="background:var(--k-layer)"></i>layer</span>
     <span style="color:var(--fg)"><i class="sw" style="background:var(--k-bt)"></i>Bluetooth</span>
     <span style="color:var(--fg)"><i class="sw" style="background:var(--k-mouse)"></i>mouse</span>
+    <span style="color:var(--fg)"><i class="sw" style="background:var(--k-wm)"></i>komorebi</span>
   </div>
 
   <div class="below">
@@ -172,8 +175,41 @@ code { font-family: var(--font-mono); font-size: 13px; background: var(--accent-
 
 <script>
 const LAYERS = [{"id":"default_layer","name":"BASE","b":["&kp ESC","&base_layer_macro","&nav_arrows_layer_macro","&nav_layer_macro","&mkp MB2","&kp CAPSLOCK","&kp BSPC","&kp DEL","&kp TAB","&kp Q","&kp W","&kp E","&kp R","&kp T","&kp Y","&kp U","&kp I","&kp O","&kp P","&kp TAB","&kp LSHIFT","&kp A","&kp S","&kp D","&kp F","&kp G","&kp H","&kp J","&kp K","&kp L","&kp SEMI","&kp RSHIFT","&kp LCTRL","&kp Z","&kp X","&kp C","&kp V","&kp B","&kp N","&kp M","&kp COMMA","&kp DOT","&kp SINGLE_QUOTE","&kp RCTRL","&kp LGUI","&kp LALT","&kp RET","&kp C_MUTE","&kp RET","&kp RALT","&kp RGUI","&mo 7","&mo 5","&mo 6","&mo 4","&mo 1","&kp SPACE","&mo 5","&mo 7","&mo 4","&mo 6"]},{"id":"capsmod_layer","name":"CAPS MOD","b":["&trans","&bt BT_SEL 0","&bt BT_SEL 1","&bt BT_SEL 2","&trans","&trans","&trans","&trans","&kp LA(TAB)","&kp GRAVE","&kp LC(W)","&kp LC(X)","&kp LC(C)","&kp LC(V)","&kp HOME","&kp PAGE_DOWN","&kp PAGE_UP","&kp END","&trans","&trans","&trans","&trans","&kp RET","&kp ESC","&kp BSPC","&kp DEL","&kp LEFT_ARROW","&kp DOWN_ARROW","&kp UP_ARROW","&kp RIGHT_ARROW","&trans","&trans","&trans","&left_double_click_macro","&mkp MB1","&mkp MB3","&mkp MB2","&kp SPACE","&kp BSPC","&kp DEL","&kp LESS_THAN","&kp GREATER_THAN","&kp K_CONTEXT_MENU","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"navigation_layer","name":"NAV","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SPACE","&trans","&trans","&trans","&trans","&trans"]},{"id":"nav_arrow_layer","name":"NAV ARROW","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp UP_ARROW","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp LEFT_ARROW","&kp DOWN_ARROW","&kp RIGHT_ARROW","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SPACE","&trans","&trans","&trans","&trans","&trans"]},{"id":"symbol_left_layer","name":"SYM LEFT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SLASH","&kp NUMBER_7","&kp NUMBER_8","&kp NUMBER_9","&kp MINUS","&trans","&trans","&kp LEFT_PARENTHESIS","&kp RIGHT_PARENTHESIS","&kp LEFT_BRACKET","&kp RIGHT_BRACKET","&kp SEMI","&kp BACKSLASH","&kp NUMBER_4","&kp NUMBER_5","&kp NUMBER_6","&kp EQUAL","&trans","&trans","&trans","&trans","&kp LEFT_BRACE","&kp RIGHT_BRACE","&kp SINGLE_QUOTE","&kp BSPC","&kp NUMBER_1","&kp NUMBER_2","&kp NUMBER_3","&kp NUMBER_0","&trans","&trans","&trans","&trans","&trans","&kp DOT","&trans","&kp COMMA","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"symbol_right_layer","name":"SYM RIGHT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp SLASH","&kp NUMBER_7","&kp NUMBER_8","&kp NUMBER_9","&kp MINUS","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp BACKSLASH","&kp NUMBER_4","&kp NUMBER_5","&kp NUMBER_6","&kp EQUAL","&kp LEFT_PARENTHESIS","&kp RIGHT_PARENTHESIS","&kp LEFT_BRACKET","&kp RIGHT_BRACKET","&kp SEMI","&trans","&trans","&kp BSPC","&kp NUMBER_1","&kp NUMBER_2","&kp NUMBER_3","&kp NUMBER_0","&trans","&trans","&kp LEFT_BRACE","&kp RIGHT_BRACE","&kp SINGLE_QUOTE","&trans","&kp COMMA","&trans","&kp DOT","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"func_left_layer","name":"FUNC LEFT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp F19","&kp F20","&kp F21","&kp F24","&trans","&kp LC(LA(DEL))","&kp F7","&kp F8","&kp F9","&kp F12","&trans","&trans","&kp F16","&kp F17","&kp F18","&kp F23","&trans","&kp LA(F4)","&kp F4","&kp F5","&kp F6","&kp F11","&trans","&trans","&kp F13","&kp F14","&kp F15","&kp F22","&kp LC(LA(GRAVE))","&kp LC(LS(ESC))","&kp F1","&kp F2","&kp F3","&kp F10","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"func_right_layer","name":"FUNC RIGHT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp LC(LA(DEL))","&kp F7","&kp F8","&kp F9","&kp F12","&kp F19","&kp F20","&kp F21","&kp F24","&trans","&trans","&trans","&kp LA(F4)","&kp F4","&kp F5","&kp F6","&kp F11","&kp F16","&kp F17","&kp F18","&kp F23","&trans","&trans","&trans","&kp LC(LS(ESC))","&kp F1","&kp F2","&kp F3","&kp F10","&kp F13","&kp F14","&kp F15","&kp F22","&kp LC(LA(GRAVE))","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"bt_layer","name":"BT","b":["&tog 8","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bt BT_SEL 0","&bt BT_SEL 1","&bt BT_SEL 2","&bt BT_SEL 3","&bt BT_SEL 4","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bt BT_DISC 0","&bt BT_DISC 1","&bt BT_DISC 2","&bt BT_DISC 3","&bt BT_DISC 4","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bt BT_CLR","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&bootloader","&trans","&out OUT_TOG","&trans","&trans","&bootloader","&trans","&trans"]},{"id":"invert_layer","name":"INVERT","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp Y","&kp U","&kp I","&kp O","&kp P","&kp Q","&kp W","&kp E","&kp R","&kp T","&trans","&trans","&kp H","&kp J","&kp K","&kp L","&kp SEMI","&kp A","&kp S","&kp D","&kp F","&kp G","&trans","&trans","&kp N","&kp M","&kp COMMA","&kp DOT","&kp SINGLE_QUOTE","&kp Z","&kp X","&kp C","&kp V","&kp B","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]},{"id":"caps_mod_inverted","name":"CAPS M INV","b":["&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp HOME","&kp PAGE_DOWN","&kp PAGE_UP","&kp END","&trans","&kp GRAVE","&kp LC(W)","&kp LC(X)","&kp LC(C)","&kp LC(V)","&trans","&trans","&kp LEFT_ARROW","&kp DOWN_ARROW","&kp UP_ARROW","&kp RIGHT_ARROW","&trans","&kp LALT","&kp LSHIFT","&kp LCTRL","&kp BSPC","&kp DEL","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&kp LC(Z)","&mkp MB1","&mkp MB3","&mkp MB2","&kp SPACE","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans","&trans"]}];
-// KOMOREBI is still empty: all 61 positions are &trans.
-LAYERS.push({ id: 'komorebi_layer', name: 'KOMOREBI', b: Array(61).fill('&trans') });
+// KOMOREBI: left half only, each &f20 key sends F20 + that key for komorebi.ahk.
+const T6 = Array(6).fill('&trans');
+LAYERS.push({ id: 'komorebi_layer', name: 'KOMOREBI', b: [
+  '&trans', '&f20 N1', '&f20 N2', '&f20 N3', '&trans', '&trans', '&trans', '&trans',
+  '&f20 TAB', '&f20 Q', '&f20 W', '&f20 E', '&f20 R', '&f20 T', ...T6,
+  '&trans', '&f20 A', '&f20 S', '&f20 D', '&f20 F', '&none', ...T6,
+  '&trans', '&f20 Z', '&f20 X', '&f20 C', '&none', '&f20 B', ...T6,
+  '&f20 LEFT', '&f20 RIGHT', '&f20 RET', '&f20 HOME', '&trans', '&trans', '&trans',
+  ...Array(10).fill('&trans'),
+] });
+
+// What komorebi.ahk does with F20 + each key: [keycap, plain, with Shift, with Ctrl, with Ctrl+Shift]
+const WM = {
+  N1: ['Retile', 'retile', 'reload-configuration'],
+  N2: ['Pause', 'toggle-pause'],
+  N3: ['Layout', 'cycle-layout next', 'cycle-layout previous'],
+  TAB: ['Cycle', 'cycle-focus next', 'cycle-focus previous'],
+  Q: ['Close', 'close', 'minimize'],
+  T: ['Float', 'toggle-float'],
+  W: ['WS I', 'focus-workspace 0', 'move-to-workspace 0', 'send-to-workspace 0'],
+  E: ['WS II', 'focus-workspace 1', 'move-to-workspace 1', 'send-to-workspace 1'],
+  R: ['WS III', 'focus-workspace 2', 'move-to-workspace 2', 'send-to-workspace 2'],
+  A: ['←', 'focus left', 'move left', 'resize-axis horizontal decrease', 'stack left'],
+  S: ['↓', 'focus down', 'move down', 'resize-axis vertical decrease', 'stack down'],
+  D: ['↑', 'focus up', 'move up', 'resize-axis vertical increase', 'stack up'],
+  F: ['→', 'focus right', 'move right', 'resize-axis horizontal increase', 'stack right'],
+  Z: ['Unstack', 'unstack'],
+  X: ['Stack ‹', 'cycle-stack previous'],
+  C: ['Stack ›', 'cycle-stack next'],
+  B: ['Max', 'toggle-maximize'],
+  LEFT: ['Mon ‹', 'cycle-monitor previous', 'cycle-move-to-monitor previous'],
+  RIGHT: ['Mon ›', 'cycle-monitor next', 'cycle-move-to-monitor next'],
+  RET: ['Flip', 'flip-layout horizontal', 'flip-layout vertical'],
+  HOME: ['Last WS', 'focus-last-workspace'],
+};
 
 const SHORT = ['BASE','Caps mod','NAV','Nav arr','Sym L','Sym R','Fn L','Fn R','BT','INVERT','Caps M inv','Komorebi'];
 const HASH = ['base','capsmod','nav','navarrow','symleft','symright','funcleft','funcright','bt','invert','capsminv','komorebi'];
@@ -203,7 +239,7 @@ const REACH = [
   { ways: [['combo', [52, 55], 'Sym R + the big left thumb key together.']],
     notes: ['CAPS MOD mirrored: arrows and Home / End on the left hand, modifiers and mouse buttons on the right.'] },
   { ways: [['combo', [54, 55], 'Sym L + the big left thumb key together.']],
-    notes: ['Empty for now: every key falls through to BASE. Meant for komorebi shortcuts.'] },
+    notes: ['komorebi window manager, left hand only. Each key sends F20 + that key and komorebi.ahk runs the komorebic command.', 'Plain key: focus. Hold Shift: move the window. Hold Ctrl: resize (A S D F). Ctrl + Shift: stack in that direction.'] },
 ];
 
 const KEYS = {
@@ -265,6 +301,11 @@ function label(binding) {
     case '&bootloader': return { main: 'Boot', bottom: 'flash', kind: 'sys', meaning: 'Reboot this half into flash mode' };
     case '&trans': return { trans: true };
     case '&none': return { main: '', kind: 'key', meaning: 'Does nothing' };
+    case '&f20': {
+      const [cap, plain, shift, ctrl, ctrlShift] = WM[a] || [a, 'F20 + ' + a];
+      const extra = [shift && `Shift: ${shift}`, ctrl && `Ctrl: ${ctrl}`, ctrlShift && `Ctrl+Shift: ${ctrlShift}`].filter(Boolean);
+      return { main: cap, bottom: 'komorebi', kind: 'wm', meaning: `komorebic ${plain}` + (extra.length ? ` · ${extra.join(' · ')}` : '') };
+    }
     default: return { main: beh.replace('&', ''), kind: 'key' };
   }
 }
@@ -399,7 +440,7 @@ function render() {
     const l = resolve(layer, p);
     const isKnob = p === KNOB.pos;
     g.setAttribute('class', ['key', isKnob ? 'knob' : '', 'kind-' + (l.kind || 'key'), l.trans ? 'trans' : '', act.has(p) ? 'act' : '', act.get(p) === 'combo' ? 'combo' : '', p === selected ? 'sel' : ''].join(' '));
-    const main = isKnob ? ((layer === 1 || layer === 5) ? 'Tabs' : 'Vol') : l.main;
+    const main = isKnob ? ((layer === 1 || layer === 5) ? 'Tabs' : layer === 11 ? 'WS' : 'Vol') : l.main;
     const k = KEYPOS[p];
     const len = [...(main || '')].length;
     const t = g.querySelector('.main');
@@ -440,7 +481,9 @@ function render() {
 }
 
 // The knob's turn per layer: CAPS MOD and SYM RIGHT switch tabs, every other layer is volume.
-const knobText = i => (i === 1 || i === 5) ? 'clockwise Ctrl+Tab, counter-clockwise Ctrl+Shift+Tab (next / previous tab)' : 'volume up / down';
+const knobText = i => (i === 1 || i === 5) ? 'clockwise Ctrl+Tab, counter-clockwise Ctrl+Shift+Tab (next / previous tab)'
+  : i === 11 ? 'clockwise next workspace, counter-clockwise previous (hold Shift to take the window along)'
+  : 'volume up / down';
 
 function renderDetail() {
   const p = selected;

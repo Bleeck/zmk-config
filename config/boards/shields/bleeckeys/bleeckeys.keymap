@@ -50,6 +50,29 @@
         tap-ms = <40>;
         bindings = <&mkp MB1>, <&mkp MB1>; // First tap is left click, second is left click
         };
+    // KOMOREBI layer: taps the key while holding F20; komorebi.ahk turns F20 + key into a komorebic command.
+    // Shift and Ctrl held on the layer pass through, so F20 + Shift + key is a second command.
+    f20: f20 {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings
+            = <&macro_press &kp F20>
+            , <&macro_param_1to1>
+            , <&macro_tap &kp MACRO_PLACEHOLDER>
+            , <&macro_release &kp F20>
+            ;
+        };
+    };
+
+    behaviors {
+        // KOMOREBI layer knob: clockwise next workspace, counter-clockwise previous
+        komorebi_knob: komorebi_knob {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&f20 PG_DN>, <&f20 PG_UP>;
+        };
     };
 
     combos {
@@ -227,15 +250,16 @@
             };
             komorebi_layer {
                 display-name = "KOMOREBI";
+                // Left half only; each &f20 key sends F20 + that key for komorebi.ahk. Shift and Ctrl stay as they are.
                 bindings = <
-	&trans	&trans	&trans	&trans					&trans	&trans	&trans	&trans
-	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-			&trans	&trans	&trans	&trans		&trans	&trans	&trans
+	&trans	&f20 N1	&f20 N2	&f20 N3					&trans	&trans	&trans	&trans
+	&f20 TAB	&f20 Q	&f20 W	&f20 E	&f20 R	&f20 T	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&f20 A	&f20 S	&f20 D	&f20 F	&none	&trans	&trans	&trans	&trans	&trans	&trans
+	&trans	&f20 Z	&f20 X	&f20 C	&none	&f20 B	&trans	&trans	&trans	&trans	&trans	&trans
+			&f20 LEFT	&f20 RIGHT	&f20 RET	&f20 HOME		&trans	&trans	&trans
 		&trans	&trans	&trans	&trans	&trans		&trans	&trans	&trans	&trans	&trans
             >;
-                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+                sensor-bindings = <&komorebi_knob>;
             };
     };												
 };												
