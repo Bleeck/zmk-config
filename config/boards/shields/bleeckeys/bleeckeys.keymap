@@ -50,7 +50,7 @@
         tap-ms = <40>;
         bindings = <&mkp MB1>, <&mkp MB1>; // First tap is left click, second is left click
         };
-    // KOMOREBI layer: taps the key while holding F20; komorebi.ahk turns F20 + key into a komorebic command.
+    // KOMOREBI layer: taps the key while holding F20; whkd (~/.config/whkdrc) turns F20 + key into a komorebic command.
     // Shift and Ctrl held on the layer pass through, so F20 + Shift + key is a second command.
     f20: f20 {
         compatible = "zmk,behavior-macro-one-param";
@@ -250,7 +250,7 @@
             };
             komorebi_layer {
                 display-name = "KOMOREBI";
-                // Left half only; each &f20 key sends F20 + that key for komorebi.ahk. Shift and Ctrl stay as they are.
+                // Left half only; each &f20 key sends F20 + that key for whkd. Shift and Ctrl stay as they are.
                 bindings = <
 	&trans	&f20 N1	&f20 N2	&f20 N3					&trans	&trans	&trans	&trans
 	&f20 TAB	&f20 Q	&f20 W	&f20 E	&f20 R	&f20 T	&trans	&trans	&trans	&trans	&trans	&trans
